@@ -1,0 +1,18 @@
+<StackLayout [row]="row" [col]="col" [formGroup]="rformgroup">
+ <TextField [hint]="rtext" [formControlName]="rcontrolname" [ngClass]="{ errorBorder :invalidControl}" ></TextField>
+    <!-- helper="example helper"  -->
+  <!-- <MDTextField 
+  
+  placeholderColor="green"
+  variant="outline" 
+  returnKeyType="next"
+  [class]="class">
+
+  </MDTextField>
+   -->
+  <Label text="incomplete input " *ngIf="errorRequired" class="errorlbl"></Label>
+  <Label text="format is incorrect" *ngIf="errorFormate" class="errorlbl"></Label>
+  <Label text="length is incorrect" *ngIf="errorLength" class="errorlbl"></Label> -->
+</StackLayout>
+
+  

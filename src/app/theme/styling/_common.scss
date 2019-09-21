@@ -1,0 +1,104 @@
+@import 'variables';
+
+
+.primarybg{
+    background-color: $primary-color;
+}
+
+.pagelightbg {
+    background-color: $pageBg;
+}
+
+.bgWhite {
+    background-color: whitesmoke
+}
+.primaryColor {
+    color: $primary-color;
+   
+}
+.mutedDark {
+    color: $mutedDark;
+}
+
+
+.p-b-150 {
+    padding-bottom: 150px;
+}
+
+.mutedDarkbg {
+background-color: $secondary-color;    
+}
+
+.sec-color {
+    color: $secondary-color;
+}
+.lightcolor{
+    color:#ebc4c0;
+}
+.textfieldBorderColor {
+    border-color: $primary-color;
+    border-width: 1dp;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.font12 {
+    font-size: 12dp;
+}
+.font13 {
+    font-size: 13dp;
+}
+.font16 {
+    font-size: 16dp;
+}
+
+
+.font-w-500 {
+    font-weight: 500;
+}
+
+.font-w-700 {
+    font-weight: 700;
+}
+
+.font-w-900 {
+    font-weight: 900;
+}
+.fontmedium{
+    font-size: 20%;
+}
+
+.borderradius {
+    border-radius: 5%
+}
+.b-r-100 {
+    border-radius: 100%;
+}
+.mutedColor{
+    color:$mutedcolor;
+}
+.whitecolor{
+    color:$secondary-color;
+}
+
+.listItemBorderBottom {
+    // border-bottom-color: #9e9e9e;    
+    // border-bottom-width: 1px;    
+    // margin-top: 3px;
+    // margin-bottom: 3px;
+}
+
+.fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900; 
+  
+}
+.Oswald {
+    font-family: 'Oswald-Regular';
+}
+
+.Roboto {
+    font-family: 'Roboto';
+}

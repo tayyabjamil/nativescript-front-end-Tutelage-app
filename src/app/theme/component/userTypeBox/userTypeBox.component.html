@@ -1,0 +1,23 @@
+<GridLayout row="1" colspan="2" rows="*,auto" columns="*,25,*" [marginTop]="pageSide ">
+  <GridLayout class="inactive-border " verticalAlignment="center" horizontalAlignment="right" [width]="boxSize"
+    [height]="boxSize">
+    <Image (tap)="onAccountSelection('student')" [ngClass]="{'selectedBorder' : (showType === 'student')}" row="0"
+      src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-74-512.png">
+    </Image>
+
+    <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
+      horizontalAlignment="right"></Label>
+  </GridLayout>
+  
+  <GridLayout col="2" class="inactive-border pageSide " verticalAlignment="center" horizontalAlignment="left"
+    [width]="boxSize" [height]="boxSize">
+    <Image (tap)="onAccountSelection('teacher')" [ngClass]="{'selectedBorder' : (showType === 'teacher')}" row="0"
+      src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-74-512.png">
+    </Image>
+    <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
+      horizontalAlignment="right"></Label>
+  </GridLayout>
+  <Label text="Student" row="1" col="0" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
+  <Label text="Teacher" row="1" col="2" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
+
+</GridLayout>

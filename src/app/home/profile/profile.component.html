@@ -1,0 +1,72 @@
+<ScrollView class="pagelightbg ">
+    <GridLayout rows="auto,auto,auto,auto,auto,auto" class="p-b-100" columns="*">
+            <Image [height]="previewSize" style="  border-radius: 40%" [marginTop]="pageSide/2" [width]="previewSize"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkTkxvlVSXCW0Avw0qipbUSd7CFnjPZ_PdEson-QeJk1WSbv8rg"
+            class="thumb img-circle"></Image>
+
+        <Label [text]="profile?.username" row="1"
+            class="f-22 text-center capitalize  mutedDark f-bold m-l-30 m-t-5 m-r-30 Roboto" textWrap="true"></Label>
+        <GridLayout rows="auto,auto" row="2" [marginTop]="previewSize/4" [marginLeft]="pageSide"
+            [marginRight]="pageSide">
+            <Label text="PERSONAL" class="f-12 mutedDark m-l-10 p-b-10" textWrap="true"></Label>
+            <StackLayout row="1" class="bgWhite boxBorder">
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                    <Image col="0" src="~/assets/images/mail.png"  stretch="aspectFit" [marginTop]="iconSize/8"
+                    [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+                    <Label col="1" [marginLeft]="pageSide" text="Email" style="padding-top: 10%" class="mutedDark "></Label>
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.email" class="mutedDark Roboto"></Label>
+                </GridLayout>
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                     <Image col="0"  src="~/assets/images/phone.png" stretch="aspectFit" [marginTop]="iconSize/8"
+                [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+            <Label col="1" [marginLeft]="pageSide" text="Contact" style="padding-top: 10%" class="mutedDark "></Label> -->
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.contact" class="mutedDark Roboto"></Label>
+                </GridLayout>
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                    <Image col="0" src="~/assets/images/house.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
+                    [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image> -->
+                     <Label col="1" [marginLeft]="pageSide" text="Address" style="padding-top: 10%" class="mutedDark "></Label> 
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.adress" class="mutedDark Roboto"></Label>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+        <GridLayout rows="auto,auto" row="3" [marginTop]="previewSize/4" [marginLeft]="pageSide"
+            [marginRight]="pageSide">
+            <Label text="ACADMICS" class="f-12 mutedDark m-l-10 p-b-10" textWrap="true"></Label>
+            <StackLayout row="1" class="bgWhite boxBorder">
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                    <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                    <Label col="1" text="University" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.university" class="mutedDark Roboto"></Label>
+                </GridLayout>
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                    <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                    <Label col="1" text="Semester" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.semester" class="mutedDark Roboto"></Label>
+                </GridLayout>
+                <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
+                    class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
+                    [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
+                    <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                    <Label col="1" text="Department" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                    <Label col="0" colSpan="2" row="1" [text]="profile?.department" class="mutedDark Roboto"></Label>
+
+                </GridLayout>
+                <Label text="Logout" (tap)="logout()" padding="20" color="red" textWrap="true"></Label>
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</ScrollView>

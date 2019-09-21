@@ -1,0 +1,59 @@
+<!-- <Label row="1" class="gradientline"></Label> -->
+<GridLayout row="1">
+
+  <GridLayout *ngIf="userType === 'student'" columns="*,*,*,*" rows="auto" class="pagebg">
+
+
+    <!-- <ns-icon icon="&#xf2bd;" row="0" col="0" (tap)="onviewSelection('profile')"
+     ns-icon>
+  <ns-icon icon="&#xf059;" row="0" col="1" (tap)="onviewSelection('Queries')"
+     ns-icon>
+  <ns-icon icon="&#xf02d;" row="0" col="2" (tap)="onviewSelection('Inbox')"
+     ns-icon>
+  <ns-icon icon="&#xf02d;" row="0" col="3" (tap)="onviewSelection('courses')"
+     ns-icon>
+  <ns-icon icon="&#xf02d;" row="0" col="4" (tap)="onviewSelection('courses')"
+     ns-icon> -->
+
+    <StackLayout row="0" col="0">
+        <Label text="My Feed" padding="10"  col="1" row="1"
+        (tap)="onNavigate('home/myfeed')" horizontalAlignment="center"></Label>
+    </StackLayout>
+
+    <StackLayout row="0" col="1">
+      <Label text="Courses" padding="10"  col="1" row="1"
+        (tap)="onNavigate('home/courses')" horizontalAlignment="center"></Label>
+    </StackLayout>
+
+    <StackLayout row="0" col="2">
+      <Label text="Messages" (tap)="onNavigate('home/inbox')" padding="10"  col="2" row="1"
+         horizontalAlignment="center"></Label>
+    </StackLayout>
+
+    <StackLayout row="0" col="3">
+      <Label text="Profile" padding="10"  (tap)="onNavigate('home/profile')"  horizontalAlignment="center"></Label>
+    </StackLayout>
+  </GridLayout>
+
+  <GridLayout row="2" *ngIf="userType === 'teacher'" columns="*,*,*,*" rows="auto" class="pagebg">
+      <StackLayout row="0" col="0">
+          <Label text="Queries" padding="10"  col="1" row="1"
+          (tap)="onNavigate('home/queries')"horizontalAlignment="center"></Label>
+      </StackLayout>
+  
+      <StackLayout row="0" col="1">
+        <Label text="My Feed" padding="10"  col="1" row="1"
+          (tap)="onNavigate('home/courses')" horizontalAlignment="center"></Label>
+      </StackLayout>
+  
+      <StackLayout row="0" col="2">
+        <Label text="Messages" (tap)="onNavigate('home/inbox')" padding="10"  col="2" row="1"
+           horizontalAlignment="center"></Label>
+      </StackLayout>
+  
+      <StackLayout row="0" col="3">
+        <Label text="Profile" padding="10"  (tap)="onNavigate('home/profile')"  horizontalAlignment="center"></Label>
+      </StackLayout>
+  </GridLayout>
+
+</GridLayout>

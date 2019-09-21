@@ -1,0 +1,78 @@
+<ActionBar title="Queries" class="primaryColor">
+  <GridLayout columns="*,auto" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
+    <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald"></Label>
+  </GridLayout>
+</ActionBar>
+<GridLayout rows="*" columns="" class="pagelightbg">
+
+    <RadListView  [items]="queries" >
+        <ng-template tkListItemTemplate let-item="item">
+            <GridLayout (tap)="bidinglist(item)" [height]="pageSide*5" marginBottom="2dp"  rows="auto,auto,auto,*" backgroundColor="white"
+            [paddingLeft]="pageSide/ 2"  [paddingRight]="pageSide/2"
+            columns="*,*,*">
+
+            <Label col="0" text="2 min ago"  class="text-left   f-w-600 mutedColor font13  Roboto"></Label>
+            <Label col="0" row="1" colSpan="3" [text]="item.title" class="font16 font-w-700 Roboto mutedDark p-t-10 p-b-10"
+              textWrap="true"></Label>
+            <GridLayout rows="auto,auto,auto" col="0" row="2">
+              <Image src="~/assets/images/deadline.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
+                [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+              <Label row="1" class="text-center font13 sec-color Roboto font-w-700 " text="Deadline"></Label>
+              <Label row="2" class="text-center mutedColor Roboto font12" text="Due Dec 23, 2015"></Label>
+            </GridLayout>
+            <GridLayout rows="auto,auto,auto" col="1" row="2">
+              <Image src="~/assets/images/notebook.png" stretch="aspectFit" [marginTop]="iconSize/8"
+                [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+              <Label row="1" class="text-center sec-color font13 Roboto font-w-700 " text="Type"></Label>
+              <Label row="2" class="text-center mutedColor Roboto font12" text="Assingment"></Label>
+            </GridLayout>
+    
+            <GridLayout rows="auto,auto,auto" col="2" row="2">
+              <Image src="~/assets/images/dollar5.png"  class="b-r-100 " stretch="aspectFit" [marginTop]="iconSize/8"
+                [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+              <Label row="1" [text]="item.estimateAmount" class="text-center sec-color font13 Roboto font-w-700 ">
+              </Label>
+              <Label row="2" class="text-center mutedColor Roboto font12" text="/month"></Label>
+            </GridLayout>
+            <Label col="0" row="3" colSpan="3" [text]="item.adress" [paddingTop]="pageSide/ 4" 
+              class="text-center f-w-900 mutedColor font13 capitalize Roboto" verticalAlignment="bottom"></Label>
+          </GridLayout>
+        </ng-template>
+
+        <ng-template tkListViewFooter>
+            <GridLayout class=""></GridLayout>
+        </ng-template>
+    </RadListView>
+
+    <Image src="~/assets/images/composer.png"  [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark "
+    [marginTop]="pageSide*9" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2" stretch="aspectFit"  [width]="iconSize*2" [height]="iconSize*2"></Image>
+
+  
+</GridLayout>
+<!-- <ActionBar title="Queries" class="primaryColor">
+  <GridLayout columns="*,auto" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
+    <ns-icon col="1" icon="&#xf002;" class="primaryColor"></ns-icon>
+    <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald"></Label>
+  </GridLayout>
+</ActionBar>
+<ScrollView>
+<GridLayout rows="*" columns="" class="pagelightbg" [marginTop]="pageSide/2">
+  <ListView row="0" [items]="queries" separatorColor="transparent">
+    <ng-template let-queries="item">
+      <GridLayout>
+        <GridLayout  row="0" rows="auto,auto,auto,auto" columns="auto,*,auto" [marginBottom]="pageSide/4" [marginLeft]="pageSide/2"
+          [marginRight]="pageSide/2" class="bgWhite">
+          <Label class="Roboto" col="0" row="0" [text]="queries.title" [marginLeft]="pageSide/2"></Label>
+          <Label class="Roboto" col="0" row="1" [text]="queries.description" [marginLeft]="pageSide/2"></Label>
+          <Label class="Roboto" col="0" row="2" [text]="queries.estimateAmount" [marginLeft]="pageSide/2"></Label>
+          <Label class="Roboto" col="0" row="3" [text]="queries.adress" [marginLeft]="pageSide/2"></Label>
+          <ns-icon icon="&#xf0a9;"  row="2" col="2" class="primaryColor"> </ns-icon>
+        </GridLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+  <Label text="&#xf14b;" [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark"
+    [marginTop]="pageSide*11" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2"></Label>
+</GridLayout>
+
+</ScrollView> -->

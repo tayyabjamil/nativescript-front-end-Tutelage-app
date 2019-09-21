@@ -1,0 +1,60 @@
+<ActionBar title="Query Details and Requests" class="primaryColor">
+</ActionBar>
+
+
+<ScrollView>
+
+  <StackLayout class="pagelightbg">
+    <GridLayout  rows="auto,auto,*" columns="*" >
+      <GridLayout class="bgWhite" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" 
+        [marginRight]="pageSide/4" [marginLeft]="pageSide/4" [marginBottom]="pageSide/2" [marginTop]="pageSide/2" columns="*,*,*">
+       <Label text="23 min age"  textWrap="true"></Label>
+    
+        <Label col="0" row="1" colSpan="3" [text]="queries?.title" class="font16 font-w-700 Roboto mutedDark"
+          textWrap="true"></Label>
+        <GridLayout rows="auto,auto,auto" col="0" row="2">
+          <Image src="~/assets/images/deadline.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
+            [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+          <Label row="1" class="text-center font13 sec-color Roboto font-w-700 " text="Deadline"></Label>
+          <Label row="2" class="text-center mutedColor Roboto font12" text="Due Dec 23, 2015"></Label>
+        </GridLayout>
+        <GridLayout rows="auto,auto,auto" col="1" row="2">
+          <Image src="~/assets/images/notebook.png" stretch="aspectFit" [marginTop]="iconSize/8"
+            [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+          <Label row="1" class="text-center sec-color font13 Roboto font-w-700 " text="Type"></Label>
+          <Label row="2" class="text-center mutedColor Roboto font12" text="Assingment"></Label>
+        </GridLayout>
+        <GridLayout rows="auto,auto,auto" col="2" row="2">
+          <Image src="~/assets/images/dollar.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
+            [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+          <Label row="1" [text]="queries?.estimateAmount" class="text-center sec-color font13 Roboto font-w-700 ">
+          </Label>
+          <Label row="2" class="text-center mutedColor Roboto font12" text="/month"></Label>
+        </GridLayout>
+        <Label row="5" text="Institute:" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+        <Label col="0" row="6" colSpan="3" [paddingLeft]="pageSide" [text]="queries?.adress" [paddingTop]="pageSide/ 4"
+          class=" f-w-900 mutedColor font13 capitalize Roboto"></Label>
+        <Label row="7" text="Description:" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+        <Label row="8" colSpan="3" [text]="queries?.description" [paddingLeft]="pageSide" [paddingRight]="pageSide"
+          textWrap="true"></Label>
+      </GridLayout>
+      <StackLayout row="2" class="bgWhite" [margin]="pageSide/2"  >
+        <ng-container *ngFor="let item of ['1','1','1','1','1']">
+          <GridLayout columns="auto,*,auto" rows="*,auto">
+            <Image [height]="iconSize" [width]="iconSize" row="0" col="0" [paddingLeft]="pageSide/2"
+              style="  border-radius: 40%"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkTkxvlVSXCW0Avw0qipbUSd7CFnjPZ_PdEson-QeJk1WSbv8rg"
+              class="thumb img-circle"></Image>
+            <Label text="Tayyab Jamil" row="0" col="1" [paddingLeft]="pageSide/2" verticalAlignment="center"
+              class="font16 font-w-600 Roboto mutedDark"></Label>
+            <Image [height]="iconSize*2" src="~/assets/images/image.png" row="0" col="2" class="b-r-100"
+              stretch="aspectFit"></Image>
+              <Label row="1" colSpan="3" class="gradientline"></Label>
+ 
+            </GridLayout>
+        </ng-container>
+      </StackLayout>
+    </GridLayout> 
+  </StackLayout>
+
+</ScrollView>

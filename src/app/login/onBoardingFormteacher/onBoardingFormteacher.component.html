@@ -1,0 +1,55 @@
+<ScrollView>
+
+  <GridLayout rows="auto,*,auto" columns="" class="pagelightbg">
+    <Label row="0" text="formtitle" class="text-center Oswald primaryColor m-t-15 m-b-15"></Label>
+
+    <Pager row="1" [selectedIndex]="latestRecievedIndex" (selectedIndexChange)="onIndexChanged($event)"
+      [items]="onBoardingitems" [itemTemplateSelector]="templateSelector" disableAnimation="false">
+
+      <ng-template pagerTemplateKey="Personalinfo" let-i="index" let-item="item">
+        <GridLayout rows="auto,auto" columns="">
+
+
+          <GridLayout row="0" rows="auto" columns="*" [marginRight]="pageSide" [marginLeft]="pageSide">
+            <ns-image-upload></ns-image-upload>
+          </GridLayout>
+          <StackLayout row="1" class=" bgWhite" [marginRight]="pageSide" [marginLeft]="pageSide" [marginTop]="pageSide">
+
+            <ns-textField rtext="Firstname" [rformgroup]="onBoardingForm" rcontrolname="Firstname"></ns-textField>
+            <ns-textField rtext="Lastname" [rformgroup]="onBoardingForm" rcontrolname="Lastname">
+            </ns-textField>
+            <ns-textField rtext="Adress" [rformgroup]="onBoardingForm" rcontrolname="Adress">
+            </ns-textField>
+            <ns-textField rtext="Contact" [rformgroup]="onBoardingForm" rcontrolname="Contact">
+            </ns-textField>
+
+          </StackLayout>
+        </GridLayout>
+      </ng-template>
+
+      <ng-template pagerTemplateKey="Acadmics" let-i="index" let-item="item">
+        <GridLayout rows="auto" columns="*">
+
+          <StackLayout row="0" [marginTop]="boxSize" class=" bgWhite" style="padding: 5%" [marginRight]="pageSide"
+            [marginLeft]="pageSide">
+            <ns-textField rtext="University" [rformgroup]="onBoardingForm" rcontrolname="University"></ns-textField>
+            <ns-textField rtext="Department" [rformgroup]="onBoardingForm" rcontrolname="Department"></ns-textField>
+            <ns-textField rtext="Semester" [rformgroup]="onBoardingForm" rcontrolname="Semester">
+            </ns-textField>
+            <ns-textField rtext="Subjects" [rformgroup]="onBoardingForm" rcontrolname="Subjects">
+            </ns-textField>
+          </StackLayout>
+
+        </GridLayout>
+      </ng-template>
+
+
+    </Pager>
+    <GridLayout row="2" [nsRouterLink]="['/home']" class="m-t-10 m-b-20" [marginBottom]="pageSide"
+      class="textfieldBorderColor mutedDark primarybg " [marginLeft]="pageSide" [marginRight]="pageSide">
+      <ns-button row="1" col="1" text="Next" class="secondrycolor"></ns-button>
+    </GridLayout>
+
+  </GridLayout>
+
+</ScrollView>

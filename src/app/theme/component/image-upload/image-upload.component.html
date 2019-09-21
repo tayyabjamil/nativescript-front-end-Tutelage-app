@@ -1,0 +1,7 @@
+<GridLayout rows="auto" (tap)="onSelectSingleTap()" class="imagePicker" [width]="previewSize" [height]="previewSize">
+  <Label text="&#xf030;" class="fas" horizontalAlignment="center" [marginTop]="pageSide/4" style="font-size: 45%" ></Label>
+  
+  <Image row="0" [src]="imageSrc" *ngIf="imageSrc" borderRadius="700"  [width]="previewSize" [height]="previewSize"
+    stretch="aspectFill">
+  </Image>
+</GridLayout>
