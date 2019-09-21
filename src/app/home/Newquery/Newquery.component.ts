@@ -36,13 +36,13 @@ export class NewqueryComponent implements OnInit {
     this.pageSide = deviceWidth * 0.10;
     this.rform = this.formBuilder.group({
       profile_id: new FormControl(this.authService.getUser(), [Validators.required]),
-      title: new FormControl("test", [Validators.required]),
-      type: new FormControl('test', [Validators.required,]),
-      fromDate: new FormControl('testdate', [Validators.required]),
-      toDate: new FormControl('testdate', [Validators.required]),
-      estimateAmount: new FormControl('test', [Validators.required,]),
-      adress: new FormControl("test", [Validators.required]),
-      description: new FormControl('test', [Validators.required]),
+      title: new FormControl("", [Validators.required]),
+      type: new FormControl('', [Validators.required,]),
+      fromDate: new FormControl('', [Validators.required]),
+      toDate: new FormControl('', [Validators.required]),
+      estimateAmount: new FormControl('', [Validators.required,]),
+      adress: new FormControl("", [Validators.required]),
+      description: new FormControl('', [Validators.required]),
     });
   }
   onSubmit() {
