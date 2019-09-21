@@ -3,7 +3,7 @@
 
   <GridLayout *ngIf="userType === 'student'" columns="*,*,*,*" rows="auto" class="pagebg"> 
 
-  <GridLayout #tabHighlight col="0" style="background-color:   #0987db" ></GridLayout>
+  <GridLayout #tabHighlight col="0" class="primarybg" ></GridLayout>
 
     <StackLayout row="0" col="0" (tap)="selectTab(0)" padding="10" >
         <!-- <Label text="My Feed"   
@@ -11,28 +11,25 @@
       <Image #image1 src="~/assets/images/query.png"  (tap)="onNavigate('home/myfeed')"  height="35" width="25"></Image>
  
       </StackLayout>
-
     <StackLayout row="0" col="1" (tap)="selectTab(1)" padding="10">
       <!-- <Label text="Courses" 
         (tap)="onNavigate('home/courses')" horizontalAlignment="center" style="padding-bottom: 5"></Label> -->
      <Image #image2 src="~/assets/images/course.png" (tap)="onNavigate('home/courses')" height="35" width="25"></Image>
- 
       </StackLayout>
-
     <StackLayout row="0" col="2" (tap)="selectTab(2)" padding="10">
       <!-- <Label text="Messages" (tap)="onNavigate('home/inbox')"   
          horizontalAlignment="center" style="padding-bottom: 5"></Label> -->
       <Image #image3 src="~/assets/images/sms.png"  (tap)="onNavigate('home/inbox')" height="35"  width="25"></Image>
- 
         </StackLayout>
-
     <StackLayout row="0" col="3" (tap)="selectTab(3)" padding="10">
       <!-- <Label text="Profile"   (tap)="onNavigate('home/profile')"  horizontalAlignment="center" style="padding-bottom: 5"></Label> -->
       <Image #image4 src="~/assets/images/profile.png"   (tap)="onNavigate('home/profile')" height="35"  width="25"></Image>
- 
+
     </StackLayout>
   </GridLayout>
   
+
+
   <GridLayout *ngIf="userType === 'teacher'" columns="*,*,*,*" rows="auto" class="pagebg"> 
 
   <GridLayout #tabHighlight col="0" style="background-color:   #0987db" ></GridLayout>
@@ -40,7 +37,7 @@
   <StackLayout row="0" col="0" (tap)="selectTab(0)" padding="10" >
       <!-- <Label text="My Feed"   
       (tap)="onNavigate('home/myfeed')" horizontalAlignment="center" style="padding-bottom: 5"></Label> -->
-    <Image #image1 src="~/assets/images/query.png"  (tap)="onNavigate('home/myfeed')"  height="35" width="25"></Image>
+    <Image #image1 src="~/assets/images/query.png"  (tap)="onNavigate('home/queries')"  height="35" width="25"></Image>
 
     </StackLayout>
 

@@ -2,9 +2,9 @@
 
 
 .primarybg{
-    background-color: $primary-color;
+    background: rgb(120, 209, 85);
+   
 }
-
 .pagelightbg {
     background-color: $pageBg;
 }
@@ -13,8 +13,8 @@
     background-color: whitesmoke
 }
 .primaryColor {
-    color: $primary-color;
-   
+    color: rgb(178,236,153);
+    color: linear-gradient(90deg, rgba(178,236,153,1) 0%, rgba(110,219,68,1) 11%);
 }
 .mutedDark {
     color: $mutedDark;
@@ -36,10 +36,13 @@ background-color: $secondary-color;
     color:#ebc4c0;
 }
 .textfieldBorderColor {
-    border-color: $primary-color;
-    border-width: 1dp;
+     border-color: rgb(148, 204, 125);
+     border-width: 1dp;
+     border-radius: 20;
 }
-
+.b-r-10{
+    border-radius: 10;
+}
 .capitalize {
     text-transform: capitalize;
 }

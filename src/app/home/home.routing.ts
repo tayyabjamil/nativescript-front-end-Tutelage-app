@@ -22,7 +22,7 @@ export const routes: Routes = [
             { path: "profile", component: ProfileComponent },
             { path: "myfeed", component: MyfeedComponent},
             { path: "queries", component:QueriesComponent},
-            { path: "", component: QueriesComponent},
+            { path: "", component: MyfeedComponent},
         ]
     },
 ];

@@ -10,6 +10,8 @@ import { ImageUploadComponent } from './component/image-upload/image-upload.comp
 import { IconComponent } from './component/icon/icon.component';
 import { UserTypeBoxComponent } from './component/userTypeBox/userTypeBox.component';
 import { BottombarComponent } from './component/bottombar/bottombar.component';
+import { TextviewComponent } from './component/textview/textview.component';
+
 
 @NgModule({
   imports: [
@@ -18,8 +20,27 @@ import { BottombarComponent } from './component/bottombar/bottombar.component';
     ReactiveFormsModule,
 
   ],
-  declarations: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent, BottombarComponent],
-  exports: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent, BottombarComponent],
+  declarations: [
+     ButtonComponent,
+     TextFieldComponent,
+     ImageUploadComponent,
+     IconComponent,
+     UserTypeBoxComponent,
+     BottombarComponent,
+     TextviewComponent,
+    ],
+  
+  exports: [
+    ButtonComponent,
+     TextFieldComponent,
+     ImageUploadComponent,
+     IconComponent,
+     UserTypeBoxComponent,
+     BottombarComponent,
+     TextviewComponent,
+    
+    ],
+     
   providers: [PageService]
 })
 export class ThemeModule { }

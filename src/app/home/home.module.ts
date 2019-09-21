@@ -12,14 +12,15 @@ import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { BiddinglistComponent } from './biddinglist/biddinglist.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { MyfeedComponent } from './myfeed/myfeed.component';
-
+import { DropDownModule } from "nativescript-drop-down/angular";
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     HomeRoutingModule,
     ThemeModule,
     NativeScriptHttpClientModule,
-    NativeScriptUIListViewModule
+    NativeScriptUIListViewModule,
+    DropDownModule,
   ],
   declarations: [
     HomeComponent,

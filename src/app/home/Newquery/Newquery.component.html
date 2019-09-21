@@ -1,8 +1,8 @@
-<ScrollView>
+ <ScrollView>
   <GridLayout rows="auto,*,auto" column="*" class="pagelightbg">
     <Label text="New Query Form" horizontalAlignment="center" [marginTop]="pageSide/2" class="Oswald primaryColor"
       textWrap="true"></Label>
-    <GridLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginBottom]="pageSide/2" [marginRight]="pageSide/2"
+    <GridLayout row="1" class="bgWhite" [marginTop]="pageSide/2"  [marginRight]="pageSide/2"
       [marginLeft]="pageSide/2">
 
 
@@ -12,7 +12,17 @@
         <ns-textField class="textfieldBorderColor" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="title"
           [rformgroup]="rform">
         </ns-textField>
-        <Label text="Type" class="Roboto primaryColor"></Label>
+          <DropDown  #dd 
+                [class]="cssClass"
+                [items]="items"
+                [(ngModel)]="selectedIndex"
+                hint="select your course"
+                (selectedIndexChanged)="onchange($event)"
+                (opened)="onopen()"
+                (closed)="onclose()"
+                row="0"
+                colSpan="2"></DropDown>
+    
         <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="type"></ns-textField>
         <GridLayout row="1" rows="auto,auto" columns="*,*">
           <TextField row="0" col="0" hint="From" [(ngModel)]="fromDate" (tap)="pickDatefrom()" editable="false"
@@ -30,16 +40,14 @@
         <Label text="Amount" class="Roboto primaryColor"></Label>
         <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="estimateAmount">
         </ns-textField>
-
-        <Label text="Description" class="Roboto primaryColor"></Label>
-        <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="description">
-        </ns-textField>
-
+        <ns-textview  ></ns-textview>
       </StackLayout>
     </GridLayout>
-    <StackLayout (tap)="onSubmit()" row="2" class="primarybg" [marginLeft]="pageSide" [marginRight]="pageSide" [marginBottom]="pageSide">
+    <StackLayout (tap)="onSubmit()" row="2" class="primarybg" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" >
       <ns-button text="Submit" color="white"></ns-button>
     </StackLayout>
   </GridLayout>
 
-</ScrollView>
+</ScrollView> 
+
+    

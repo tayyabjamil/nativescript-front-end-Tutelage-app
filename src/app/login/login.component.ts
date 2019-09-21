@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   rform: FormGroup
   pageSide;
   isBusy = false;
-
+iconSize;
   constructor(private page: Page, private formBuilder: FormBuilder, private pageService: PageService,
     private routerExtensions: RouterExtensions,
     private httpService: HttpService,
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
     this.pageSide = this.pageService.pageSidePadding();
 
+    this.iconSize = deviceWidth * 0.095;
     this.rform = this.formBuilder.group({
       email: new FormControl("user@gmail.com", [Validators.required, Validators.email]),
       password: new FormControl('password', [Validators.required, Validators.minLength(5)]),
