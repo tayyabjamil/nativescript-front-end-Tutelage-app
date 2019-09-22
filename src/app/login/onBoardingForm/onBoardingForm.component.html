@@ -1,26 +1,41 @@
 <ScrollView>
 
-  <GridLayout rows="auto,*,auto" class="pagelightbg">
-    <GridLayout row="0">
-      <Label text="formtitle" class="text-center Oswald  m-t-15 m-b-15 primaryColor"></Label>
-    </GridLayout>
-  
+  <GridLayout rows="auto,*,auto" style="background-color: #1d4354">
+      <Label row="0" text="Register Here" class="text-center Oswald  m-t-15 m-b-15" style="color: rgb(138, 223, 102) "></Label>
+    
     <Pager row="1" (selectedIndexChange)="onIndexChanged($event)" [items]="onBoarding" #pager
       [itemTemplateSelector]="templateSelector" class="pager">
       <ng-template pagerTemplateKey="personalInfo" let-i="index" let-item="item">
         <GridLayout class="pager-item" rows="auto,auto" columns="*">
-          <StackLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginRight]="pageSide"
-            [marginLeft]="pageSide">
-            <ns-userTypeBox (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
-            <ns-textField rtext="Firstname" [rformgroup]="onBoardingForm" rcontrolname="first_name">
-            </ns-textField>
-            <ns-textField rtext="Lastname" [rformgroup]="onBoardingForm" rcontrolname="last_name">
-            </ns-textField>
-            <ns-textField rtext="Username" [rformgroup]="onBoardingForm" rcontrolname="user_name">
-            </ns-textField>
-            <ns-textField rtext="Contact" [rformgroup]="onBoardingForm" rcontrolname="contact">
-            </ns-textField>
-          </StackLayout>
+      
+          <StackLayout class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"  >
+          <Label text="Personal info" class="mutedDark primaryColor" textWrap="true"></Label>
+         <GridLayout columns="*,*">
+          <ns-textField rtext="Firstname" col="0" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13 " [rformgroup]="onBoardingForm" rcontrolname="first_name">
+          </ns-textField>
+         
+          <ns-textField rtext="Lastname" col="1"  [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="last_name">
+          </ns-textField>    
+         </GridLayout>
+        
+         <ns-textField rtext="Username" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13" rcontrolname="user_name">
+          </ns-textField>
+          <ns-textField rtext="Contact" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="contact">
+          </ns-textField>
+          <Label text="Account info" class="mutedDark primaryColor" textWrap="true"></Label>
+          <ns-textField rtext="email" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="email">
+          </ns-textField>
+          <ns-textField rtext="password" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="password">
+          </ns-textField>
+          <ns-textField rtext="confirmPassword" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="confirmPassword">
+          </ns-textField>
+          <Label text="Acadmic info" class="mutedDark primaryColor" textWrap="true"></Label>
+          <ns-textField rtext="Institute" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="university">
+          </ns-textField>
+          <ns-textField rtext="city" [rformgroup]="onBoardingForm" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13"  rcontrolname="university">
+          </ns-textField>
+        </StackLayout>
+      
         </GridLayout>
       </ng-template>
       <ng-template pagerTemplateKey="professionalInfo" let-i="index" let-item="item">
@@ -29,16 +44,13 @@
               <ns-image-upload></ns-image-upload>
             </GridLayout>
            -->
-          <StackLayout class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"
-            [marginTop]="boxSize">
-            <ns-textField rtext="email" [rformgroup]="onBoardingForm" rcontrolname="email">
-            </ns-textField>
-            <ns-textField rtext="password" [rformgroup]="onBoardingForm" rcontrolname="password">
-            </ns-textField>
-            <ns-textField rtext="confirmPassword" [rformgroup]="onBoardingForm" rcontrolname="confirmPassword">
-            </ns-textField>
-          </StackLayout>
-        </GridLayout>
+    
+          <StackLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginRight]="pageSide"
+          [marginLeft]="pageSide">
+          <ns-userTypeBox (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
+        </StackLayout>
+    
+          </GridLayout>
       </ng-template>
      
       <ng-template pagerTemplateKey="contactInfo" let-i="index" let-item="item">
@@ -46,15 +58,7 @@
 
           <StackLayout row="0" class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"
             [marginTop]="boxSize">
-            <ns-textField rtext="university" [rformgroup]="onBoardingForm" rcontrolname="university">
-            </ns-textField>
-            <ns-textField rtext="semester" [rformgroup]="onBoardingForm" rcontrolname="semester">
-            </ns-textField>
-            <ns-textField rtext="department" [rformgroup]="onBoardingForm" rcontrolname="department">
-            </ns-textField>
-            <ns-textField rtext="Adress" [rformgroup]="onBoardingForm" rcontrolname="adress">
-            </ns-textField>
-
+       
           </StackLayout>
         </GridLayout>
       </ng-template>

@@ -1,6 +1,5 @@
-<ActionBar title="myFeed" class="primaryColor">
+<ActionBar title="myFeed" class="mutedDark">
   <GridLayout columns="*,auto" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
-    <!-- <ns-icon col="1" icon="&#xf002;" class="primaryColor"></ns-icon> -->
     <Label col="0" text="myFeed" style="font-size: 20%" class="fontoswald"></Label>
   </GridLayout>
 </ActionBar>
@@ -46,7 +45,7 @@
     </ng-template>
   </RadListView>
 
-  <ActivityIndicator width="100" height="100" [busy]="loader" class="activity-indicator"></ActivityIndicator>
+  <ActivityIndicator width="100" height="100" [busy]="loader" class="activity-indicator primaryColor"></ActivityIndicator>
 
  <Image src="~/assets/images/composer.png"  [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark "
     [marginTop]="pageSide*9" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2" stretch="aspectFit"  [width]="iconSize*2" [height]="iconSize*2"></Image>

@@ -37,8 +37,8 @@ iconSize;
 
     this.iconSize = deviceWidth * 0.095;
     this.rform = this.formBuilder.group({
-      email: new FormControl("user@gmail.com", [Validators.required, Validators.email]),
-      password: new FormControl('password', [Validators.required, Validators.minLength(5)]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
       userType: new FormControl('', Validators.required),
     });
   }

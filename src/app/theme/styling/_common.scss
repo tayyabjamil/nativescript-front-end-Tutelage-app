@@ -2,7 +2,7 @@
 
 
 .primarybg{
-    background: rgb(120, 209, 85);
+    background: #37a000;
    
 }
 .pagelightbg {
@@ -12,14 +12,22 @@
 .bgWhite {
     background-color: whitesmoke
 }
-.primaryColor {
-    color: rgb(178,236,153);
-    color: linear-gradient(90deg, rgba(178,236,153,1) 0%, rgba(110,219,68,1) 11%);
+.Whitecolor {
+    color: whitesmoke;
 }
+.primaryColor {
+    color: rgb(155, 223, 126)  ;
+}
+
 .mutedDark {
     color: $mutedDark;
 }
-
+.btnStyling {
+   
+    padding: 10% 20%;
+    text-transform: uppercase;
+    border-radius: 4%;
+}
 
 .p-b-150 {
     padding-bottom: 150px;
@@ -32,21 +40,24 @@ background-color: $secondary-color;
 .sec-color {
     color: $secondary-color;
 }
-.lightcolor{
-    color:#ebc4c0;
-}
+
 .textfieldBorderColor {
-     border-color: rgb(148, 204, 125);
+     border-color: rgb(125, 182, 103);
      border-width: 1dp;
-     border-radius: 20;
+    
 }
 .b-r-10{
     border-radius: 10;
 }
+.b-r-20{
+    border-radius: 20;
+}
 .capitalize {
     text-transform: capitalize;
 }
-
+.font8{
+    font-size: 8dp;
+}
 .font12 {
     font-size: 12dp;
 }
@@ -56,10 +67,19 @@ background-color: $secondary-color;
 .font16 {
     font-size: 16dp;
 }
+.font20{
+font-size: 20;
+}
+.font30{
+    font-size: 26dp;
+}
 
 
 .font-w-500 {
     font-weight: 500;
+}
+.font-w-600 {
+    font-weight: 600;
 }
 
 .font-w-700 {

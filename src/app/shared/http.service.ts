@@ -7,10 +7,9 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private serverUrl = "https://ee99f3a0.ngrok.io";
+  private serverUrl = "https://b506ad3e.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
-  
   getUserQueries() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/api/getUserQueries?id='+ this.authService.getUser(), { headers: headers });

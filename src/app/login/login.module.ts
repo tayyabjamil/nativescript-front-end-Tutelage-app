@@ -6,6 +6,7 @@ import { PagerModule } from "nativescript-pager/angular";
 import { OnBoardingFormComponent } from './onBoardingForm/onBoardingForm.component';
 import { OnBoardingFormteacherComponent } from './onBoardingFormteacher/onBoardingFormteacher.component';
 import { ThemeModule } from '../theme/theme.module';
+import { StartingpageComponent } from './startingpage/startingpage.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ThemeModule } from '../theme/theme.module';
   declarations: [
     LoginComponent, 
     OnBoardingFormComponent,
+    StartingpageComponent
     // OnBoardingFormteacherComponent,
   ]
 })

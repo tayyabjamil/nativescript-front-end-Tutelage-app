@@ -27,12 +27,18 @@ import { AuthGuardService } from "./shared/authGuard.service";
       ThemeModule,
       LoginModule,
       NativeScriptHttpClientModule,
-      // NativeScriptUIListViewModule
+      //NativeScriptUIListViewModule
    ],
    declarations: [
       AppComponent,
+   
    ],
-   providers: [DataService, HttpService,AuthService, AuthGuardService],
+   providers: [
+      DataService,
+      HttpService,
+      AuthService,
+      AuthGuardService
+   ],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

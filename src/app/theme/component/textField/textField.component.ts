@@ -16,7 +16,7 @@ export class TextFieldComponent implements OnInit {
  
   @Input() rtext;
   @Input() row;
-  @Input() col;
+  @Input() col=0;
   @Input() class;
   
   pageSide;
