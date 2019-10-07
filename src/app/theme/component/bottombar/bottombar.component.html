@@ -1,12 +1,12 @@
 
 <GridLayout row="1">
 
-  <GridLayout *ngIf="userType === 'student'" columns="*,*,*,*" rows="auto" class="pagebg"> 
+  <GridLayout *ngIf="userType === 'student'" columns="auto,auto,auto,auto,auto" rows="auto" class="pagebg"> 
 
   <GridLayout #tabHighlight col="0" style="border-bottom-color: rgba(110,219,68,1); border-bottom-width: 3dp" ></GridLayout>
 
     <StackLayout row="0" col="0" (tap)="selectTab(0)" padding="10" >
-
+   
        <Image [ngClass]="{'selectedColor' : (showType === 'myfeed')}" #image1 src="~/assets/images/query2.png" class="primaryColor" (tap)="onNavigate('home/myfeed')"  height="35" width="25"></Image> -->
       <Label text="My Feed"   
         (tap)="onNavigate('home/myfeed')" horizontalAlignment="center" ></Label>
@@ -25,9 +25,15 @@
       <Image #image4 src="~/assets/images/profile2.png"   (tap)="onNavigate('home/profile')" height="35"  width="25"></Image>
       <Label text="Profile"   (tap)="onNavigate('home/profile')"  horizontalAlignment="center" ></Label>
     </StackLayout>
+    <StackLayout row="0" col="4" (tap)="selectTab(2)" padding="10">
+      <Image #image3 src="~/assets/images/message.png"  (tap)="onNavigate('home/class')" height="35"  width="25"></Image>
+      <Label text="Class" (tap)="onNavigate('home/class')"   
+         horizontalAlignment="center" ></Label>
+    </StackLayout>
+    
   </GridLayout>
   
-  <GridLayout *ngIf="userType === 'teacher'" columns="*,*,*,*" rows="auto" class="pagebg"> 
+  <GridLayout *ngIf="userType === 'teacher'" columns="*,*,*,*,*" rows="auto" class="pagebg"> 
 
   <GridLayout #tabHighlight col="0" style="background-color:   #0987db" ></GridLayout>
 
@@ -57,6 +63,12 @@
     <Image #image4 src="~/assets/images/profile.png"   (tap)="onNavigate('home/profile')" height="35"  width="25"></Image>
 
   </StackLayout>
+  <StackLayout row="0" col="4" (tap)="selectTab(2)" padding="10">
+    <Image #image3 src="~/assets/images/message.png"  (tap)="onNavigate('home/inbox')" height="35"  width="25"></Image>
+    <Label text="Class" (tap)="onNavigate('home/class')"   
+       horizontalAlignment="center" ></Label>
+  </StackLayout>
+
 </GridLayout>
 
 </GridLayout>

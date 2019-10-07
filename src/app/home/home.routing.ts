@@ -10,6 +10,8 @@ import { QueriesComponent } from "./Queries/Queries.component";
 import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { BiddinglistComponent } from "./biddinglist/biddinglist.component";
 import { MyfeedComponent } from "./myfeed/myfeed.component";
+import { AnnouncementsComponent } from "./announcements/announcements.component";
+import { NewannouncmentsComponent } from "./newannouncments/newannouncments.component";
 
 export const routes: Routes = [
     {
@@ -22,7 +24,9 @@ export const routes: Routes = [
             { path: "profile", component: ProfileComponent },
             { path: "myfeed", component: MyfeedComponent},
             { path: "queries", component:QueriesComponent},
-            { path: "", component: MyfeedComponent},
+            {path:"class",component:AnnouncementsComponent},
+            {path:"newannouncments",component:NewannouncmentsComponent},
+            { path: "", component: AnnouncementsComponent},
         ]
     },
 ];

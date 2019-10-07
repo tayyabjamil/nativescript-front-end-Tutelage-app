@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private serverUrl = "https://b506ad3e.ngrok.io";
+  private serverUrl = "https://c50f56dd.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
   getUserQueries() {

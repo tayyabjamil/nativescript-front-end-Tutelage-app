@@ -1,0 +1,19 @@
+<GridLayout rows="*" columns="" class="pagelightbg">
+
+  <RadListView items="['a','a','a','a']">
+    <ng-template tkListItemTemplate let-item="item" >
+      <GridLayout rows="auto,auto,auto" backgroundColor="white" [padding]="pageSide/2" [margin]="pageSide/2" >
+<StackLayout>
+  <Label  row="0" text="Assignment Data Structure" class="text-left p-b-2 f-w-600 mutedColor font16  Roboto"></Label>
+  <Label  row="1"  text="Dead line 23 sep" class="font13 font-w-700 Roboto mutedDark"></Label>
+  <ns-textview row="2" ></ns-textview>
+
+</StackLayout>
+      </GridLayout>
+    </ng-template>
+
+    <ng-template tkListViewFooter>
+      <GridLayout class="p-b-150"></GridLayout>
+    </ng-template>
+  </RadListView>
+</GridLayout>

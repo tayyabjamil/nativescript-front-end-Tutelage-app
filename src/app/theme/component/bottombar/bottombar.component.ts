@@ -39,8 +39,6 @@ iconSize;
   get showType() {
     return this.userType;
   }
-
-
   ngAfterViewInit() {
 		setTimeout(() => { this.animateCurrentImage(this.image1); }, 100);
 	}

@@ -13,6 +13,8 @@ import { BiddinglistComponent } from './biddinglist/biddinglist.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { MyfeedComponent } from './myfeed/myfeed.component';
 import { DropDownModule } from "nativescript-drop-down/angular";
+import { AnnouncementsComponent } from './announcements/announcements.component';
+import { NewannouncmentsComponent } from './newannouncments/newannouncments.component';
 @NgModule({
   imports: [
     NativeScriptCommonModule,
@@ -30,7 +32,9 @@ import { DropDownModule } from "nativescript-drop-down/angular";
     QueriesComponent,
     NewqueryComponent,
     BiddinglistComponent,
-    MyfeedComponent
+    MyfeedComponent,
+    AnnouncementsComponent,
+    NewannouncmentsComponent
   ]
 })
 export class HomeModule { }
