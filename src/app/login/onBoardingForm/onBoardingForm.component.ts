@@ -64,6 +64,7 @@ export class OnBoardingFormComponent implements OnInit {
             userType: new FormControl("", [Validators.required]),
         })
 
+
         this.onBoarding = [
             {
                 title: 'Personal Information',
@@ -85,7 +86,7 @@ export class OnBoardingFormComponent implements OnInit {
 
     }
 
-
+    
     onIndexChanged($event) {
         this.latestReceivedIndex = $event.value;
     }

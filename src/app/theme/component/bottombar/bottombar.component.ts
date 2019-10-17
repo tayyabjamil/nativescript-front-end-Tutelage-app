@@ -48,7 +48,7 @@ iconSize;
 		if (index != this.selectedTab) {
 			this.selectedTab = index;
 			this.tabHighlight.nativeElement.animate({
-				translate: { x: index * screen.mainScreen.widthDIPs / 4, y: 0 },
+				translate: { x: index * screen.mainScreen.widthDIPs / 5, y: 0 },
 				curve: AnimationCurve.cubicBezier(1, .02, .45, .93),
 				duration: 400
 			})
@@ -57,7 +57,6 @@ iconSize;
 			this.tabSelected.emit(this.selectedTab);
 		}
 	}
-
 	getImage(index) {
 		let currentImage;
 		switch (index) {
@@ -85,16 +84,16 @@ iconSize;
 	animateCurrentImage(arg: any) {
 		arg.nativeElement.animate({
 			scale: { x: 1.2, y: 1.2 },
-			curve: AnimationCurve.cubicBezier(1, .02, .45, .93),
-			duration: 400
+			curve: AnimationCurve.cubicBezier(1, .02, .45, .93 ),
+			duration: 800
 		});
 	}
 
 	animatePreviousImage(arg: any) {
 		arg.nativeElement.animate({
 			scale: { x: 1, y: 1 },
-			curve: AnimationCurve.cubicBezier(1, .02, .45, .93),
-			duration: 400
+			curve: AnimationCurve.cubicBezier(1, .02, .45, .93 ),
+			duration: 800
 		})
 	}
   onNavigate(url) {

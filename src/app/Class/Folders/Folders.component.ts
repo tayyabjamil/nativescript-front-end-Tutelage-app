@@ -1,29 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'tns-core-modules/ui/page/page';
 import * as platformModule from 'tns-core-modules/platform';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { Page } from 'tns-core-modules/ui/page/page';
 @Component({
-  selector: 'ns-announcements',
-  templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.css']
+  selector: 'ns-Folders',
+  templateUrl: './Folders.component.html',
+  styleUrls: ['./Folders.component.css']
 })
-export class AnnouncementsComponent implements OnInit {
+export class FoldersComponent implements OnInit {
+  pageSide: number;
+  iconSize: number;
 
-  constructor(private page:Page,private routerExtensions:RouterExtensions) { }
-pageSide;
-iconSize;
-boxSize;
+  boxSize: number;
+
+  constructor(private page: Page, private routerExtensions: RouterExtensions) { }
+
   ngOnInit() {
-   
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     this.iconSize = deviceWidth * 0.15;
-    this.page.actionBarHidden=true;
+    this.page.actionBarHidden = true;
     this.boxSize = deviceWidth * 0.70;
+
   }
-newannouncements(){
-  this.routerExtensions.navigate(['home/newannouncments']);
-}
+
+  announcements() {
+    this.routerExtensions.navigate(['home/class/announcments']);
+  }
 
 }

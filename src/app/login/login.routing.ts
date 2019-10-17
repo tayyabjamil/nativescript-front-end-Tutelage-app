@@ -9,7 +9,7 @@ import { StartingpageComponent } from "./startingpage/startingpage.component";
 
 
 export const routes: Routes = [
-    {path: "", component:LoginComponent },
+    {path: "", component:StartingpageComponent },
     {path: "login", component:LoginComponent },
     
     {path:"onBoardingForm",component:OnBoardingFormComponent},

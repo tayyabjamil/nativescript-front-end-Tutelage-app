@@ -8,19 +8,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { QueriesComponent } from './Queries/Queries.component';
 import { NewqueryComponent } from './Newquery/Newquery.component';
 import { ThemeModule } from '../theme/theme.module';
-import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { BiddinglistComponent } from './biddinglist/biddinglist.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { MyfeedComponent } from './myfeed/myfeed.component';
 import { DropDownModule } from "nativescript-drop-down/angular";
-import { AnnouncementsComponent } from './announcements/announcements.component';
-import { NewannouncmentsComponent } from './newannouncments/newannouncments.component';
+
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     HomeRoutingModule,
     ThemeModule,
-    NativeScriptHttpClientModule,
     NativeScriptUIListViewModule,
     DropDownModule,
   ],
@@ -33,8 +30,8 @@ import { NewannouncmentsComponent } from './newannouncments/newannouncments.comp
     NewqueryComponent,
     BiddinglistComponent,
     MyfeedComponent,
-    AnnouncementsComponent,
-    NewannouncmentsComponent
+    
+    
   ]
 })
 export class HomeModule { }

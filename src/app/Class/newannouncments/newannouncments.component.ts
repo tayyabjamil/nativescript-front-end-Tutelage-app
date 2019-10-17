@@ -11,7 +11,7 @@ export class NewannouncmentsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
+  const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
   const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
   this.pageSide = deviceWidth * 0.10;
   this.iconSize = deviceWidth * 0.095;

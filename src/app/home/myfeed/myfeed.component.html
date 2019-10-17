@@ -1,17 +1,22 @@
-<ActionBar title="myFeed" class="mutedDark">
+
+ <ActionBar title="myFeed" class="mutedDark">
   <GridLayout columns="*,auto" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
     <Label col="0" text="myFeed" style="font-size: 20%" class="fontoswald"></Label>
   </GridLayout>
 </ActionBar>
-<GridLayout rows="*" columns="" class="pagelightbg">
 
-  <RadListView [items]="queries">
+<AbsoluteLayout class="layout pagelightbg">
+ 
+  <RadListView [items]="queries" class="radViewList">
     <ng-template tkListItemTemplate let-item="item">
       <GridLayout (tap)="bidinglist(item)" marginBottom="2dp" rows="auto,auto,auto,auto,auto" backgroundColor="white"
         [paddingLeft]="pageSide/ 2" [paddingTop]="pageSide/ 4" [paddingBottom]="pageSide/4" [paddingRight]="pageSide/2"
         columns="*,*,*">
-
+        
         <Label col="0" text="2 min ago" class="text-left p-b-2   f-w-600 mutedColor font13  Roboto"></Label>
+        <Label text="No of Students" row="0" col="2" class="m-l-2" ></Label>
+        <Label row="0" col="2"  [text]="item.people"  class="text-right f-w-600 mutedColor font13  Roboto"></Label>
+        
         <Label col="0" row="1" colSpan="3" [text]="item.title" class="font16 font-w-700 Roboto mutedDark"
           textWrap="true"></Label>
           
@@ -39,15 +44,13 @@
           class="text-center f-w-900 mutedColor font13 capitalize Roboto"></Label>
       </GridLayout>
     </ng-template>
-
     <ng-template tkListViewFooter>
       <GridLayout class="p-b-150"></GridLayout>
     </ng-template>
   </RadListView>
 
-  <ActivityIndicator width="100" height="100" [busy]="loader" class="activity-indicator primaryColor"></ActivityIndicator>
-
- <Image src="~/assets/images/composer.png"  [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark "
-    [marginTop]="pageSide*9" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2" stretch="aspectFit"  [width]="iconSize*2" [height]="iconSize*2"></Image>
- 
-</GridLayout>
+  <ActivityIndicator top="220" left="120" width="100" height="100" [busy]="loader" class="activity-indicator primaryColor"></ActivityIndicator>
+ <Image top="400" left="250"  src="~/assets/images/composer.png"  [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark "
+       stretch="aspectFit"  [width]="iconSize*2" [height]="iconSize*2"></Image>
+  
+</AbsoluteLayout>

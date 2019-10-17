@@ -28,12 +28,12 @@ ngOnInit(){
   const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
   this.pageSide = deviceWidth * 0.10;
   this.iconSize = deviceWidth * 0.095;
- this.getUserQueries();
+ this.getPeopleQueries();
 }
- getUserQueries() {
+ getPeopleQueries() {
 
     this.loader = true;
-    this.httpService.getUserQueries()
+    this.httpService.getPeopleQueries()
     .subscribe(res => {
       this.queries = res;
       this.loader = false;

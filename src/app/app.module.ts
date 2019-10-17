@@ -15,6 +15,7 @@ import { DataService } from "./data.service";
 import { HttpService } from "./shared/http.service";
 import { AuthService } from "./shared/auth.service";
 import { AuthGuardService } from "./shared/authGuard.service";
+import { ClassModule } from "./Class/Class.module";
 // import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AuthGuardService } from "./shared/authGuard.service";
       ThemeModule,
       LoginModule,
       NativeScriptHttpClientModule,
+      ClassModule
       //NativeScriptUIListViewModule
    ],
    declarations: [

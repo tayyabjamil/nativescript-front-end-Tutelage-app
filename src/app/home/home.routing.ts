@@ -10,8 +10,7 @@ import { QueriesComponent } from "./Queries/Queries.component";
 import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { BiddinglistComponent } from "./biddinglist/biddinglist.component";
 import { MyfeedComponent } from "./myfeed/myfeed.component";
-import { AnnouncementsComponent } from "./announcements/announcements.component";
-import { NewannouncmentsComponent } from "./newannouncments/newannouncments.component";
+import { ClassComponent } from "../Class/Class.component";
 
 export const routes: Routes = [
     {
@@ -24,9 +23,9 @@ export const routes: Routes = [
             { path: "profile", component: ProfileComponent },
             { path: "myfeed", component: MyfeedComponent},
             { path: "queries", component:QueriesComponent},
-            {path:"class",component:AnnouncementsComponent},
-            {path:"newannouncments",component:NewannouncmentsComponent},
-            { path: "", component: AnnouncementsComponent},
+            { path: "class", loadChildren: "../Class/Class.module#ClassModule"  },
+            // { path: "class", component:ClassComponent}
+            { path: "", component: MyfeedComponent},
         ]
     },
 ];

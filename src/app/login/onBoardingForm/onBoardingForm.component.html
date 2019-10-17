@@ -9,6 +9,7 @@
         <GridLayout class="pager-item" rows="auto,auto" columns="*">
       
           <StackLayout class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"  >
+          <ns-userTypeBox  (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
           <Label text="Personal info" class="mutedDark primaryColor" textWrap="true"></Label>
          <GridLayout columns="*,*">
           <ns-textField rtext="Firstname" col="0" class="textfieldBorderColor m-b-2 m-l-10 m-r-10 font13 " [rformgroup]="onBoardingForm" rcontrolname="first_name">

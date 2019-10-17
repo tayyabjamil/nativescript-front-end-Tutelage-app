@@ -7,27 +7,37 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private serverUrl = "https://c50f56dd.ngrok.io";
+  private serverUrl = "https://c5774178.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
-  getUserQueries() {
+//   getFolderDetails(){
+// let headers= this.createRequestHeader();
+// return this.http.get(this.serverUrl+'/api/getFolderDetails');
+//   }
+//   getAnnouncementDetails(){
+// let headers=this.createRequestHeader();
+// return this.http.get(this.serverUrl+'/api/getAnnouncementDetails');
+//   }
+    getUserQueries() {
     let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/api/getUserQueries?id='+ this.authService.getUser(), { headers: headers });
+    return this.http.get(this.serverUrl + '/api/getUserQueries?id=' + this.authService.getUser(), { headers: headers });
   }
 
   getUserProfile() {
     let headers = this.createRequestHeader();
-    return this.http.post(this.serverUrl + '/api/getUserProfile?id='+ this.authService.getUser(), { headers: headers });
-   }
-  getPeopleQueries(){
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl +'/api/getPeopleQueries');
+    return this.http.post(this.serverUrl + '/api/getUserProfile?id=' + this.authService.getUser(), { headers: headers });
   }
+  getPeopleQueries() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getPeopleQueries');
+  }
+
   createQueries(newQuery) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/createQueries',
       {
-        profile_id:newQuery.profile_id,
+
+        profile_id: newQuery.profile_id,
         title: newQuery.title,
         type: newQuery.type,
         toDate: newQuery.toDate,
@@ -35,8 +45,10 @@ export class HttpService {
         adress: newQuery.adress,
         estimateAmount: newQuery.estimateAmount,
         description: newQuery.description,
-      }, { headers: headers });
+        people:newQuery.people,
+       }, { headers: headers });
   }
+
   createProfile(newUser) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/createProfile',
@@ -54,7 +66,7 @@ export class HttpService {
         userType: newUser.userType
       }, { headers: headers });
   }
-    
+
   login(user) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/login', { email: user.email, password: user.password, userType: user.userType }, { headers: headers });

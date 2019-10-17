@@ -9,6 +9,8 @@ const routes: Routes = [
     { path: "onBoardingForm", loadChildren: "./login/login.module#LoginModule" },
     { path: "onBoardingFormteacher", loadChildren: "./login/login.module#LoginModule" },
     { path: "home", loadChildren: "./home/home.module#HomeModule", canActivate: [AuthGuardService]  },
+    { path: "announce", loadChildren: "./home/home.module#HomeModule", canActivate: [AuthGuardService]  },
+          
 ];  
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
