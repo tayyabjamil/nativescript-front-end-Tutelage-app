@@ -13,7 +13,6 @@ export class TextFieldComponent implements OnInit {
   
   @Input() rformgroup: FormGroup;
   @Input() rcontrolname;
- 
   @Input() rtext;
   @Input() row;
   @Input() col=0;

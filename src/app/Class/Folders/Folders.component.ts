@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as platformModule from 'tns-core-modules/platform';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { Page } from 'tns-core-modules/ui/page/page';
+import { HttpService } from '~/app/shared/http.service';
 @Component({
   selector: 'ns-Folders',
   templateUrl: './Folders.component.html',
@@ -12,8 +13,8 @@ export class FoldersComponent implements OnInit {
   iconSize: number;
 
   boxSize: number;
-
-  constructor(private page: Page, private routerExtensions: RouterExtensions) { }
+folder;
+  constructor(private page: Page, private routerExtensions: RouterExtensions,private httpService:HttpService) { }
 
   ngOnInit() {
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
@@ -23,8 +24,23 @@ export class FoldersComponent implements OnInit {
     this.page.actionBarHidden = true;
     this.boxSize = deviceWidth * 0.70;
 
+    this.getFolders();
+  }
+  getFolders() {
+
+    this.httpService.getFolders()
+    .subscribe(res => {
+      debugger;
+      this.folder = res;
+      console.log(res);
+    }, (error) => {
+        console.log(error);
+      });
   }
 
+newfolder(){
+  this.routerExtensions.navigate(['home/class/newfolder']);
+}
   announcements() {
     this.routerExtensions.navigate(['home/class/announcments']);
   }

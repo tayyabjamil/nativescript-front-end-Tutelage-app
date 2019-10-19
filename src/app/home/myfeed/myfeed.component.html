@@ -6,7 +6,7 @@
 </ActionBar>
 
 <AbsoluteLayout class="layout pagelightbg">
- 
+      
   <RadListView [items]="queries" class="radViewList">
     <ng-template tkListItemTemplate let-item="item">
       <GridLayout (tap)="bidinglist(item)" marginBottom="2dp" rows="auto,auto,auto,auto,auto" backgroundColor="white"

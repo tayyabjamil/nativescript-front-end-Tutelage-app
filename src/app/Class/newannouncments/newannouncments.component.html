@@ -1,14 +1,15 @@
-<GridLayout  >
-  <StackLayout>
-       
-    <Label text="New Announcement"  textWrap="true"></Label>
-    
-    <Label text="Title" textWrap="true"></Label>
-    <Label text="type" textWrap="true"></Label>
-    <Label text="Dead Line " textWrap="true"></Label>
-    <Label text="Description" textWrap="true"></Label>
-    <Button text="Post" ></Button>
-    
+<GridLayout>
+  <StackLayout [margin]="pageSide/2">
 
+    <Label text="New Announcement" horizontalAligment="center"></Label>
+    <Label text="Title"></Label>
+    <ns-textField rcontrolname="title" [rformgroup]="rformgroup"></ns-textField>
+    <Label text="type"></Label>
+    <ns-textField rcontrolname="type" [rformgroup]="rformgroup"></ns-textField>
+    <Label text="Dead Line "></Label>
+    <ns-textField rcontrolname="deadline" [rformgroup]="rformgroup"></ns-textField>
+    <Label text="Description"></Label>
+    <ns-textField rcontrolname="description" [rformgroup]="rformgroup"></ns-textField>
+    <Button text="Post" (tap)="post()"></Button>
   </StackLayout>
-  </GridLayout>
+</GridLayout>

@@ -11,7 +11,7 @@
           [rformgroup]="rform">
         </ns-textField>
           <DropDown  #dd 
-                class="mutedDark"
+                class="mutedDark"  
                 [items]="items"
                 [(ngModel)]="selectedIndex"
                 hint="select your course"
@@ -39,7 +39,7 @@
         </ns-textField>  
         <ns-textview  ></ns-textview>        
       </StackLayout >
-    </GridLayout>  
+    </GridLayout>     
     <StackLayout (tap)="storedata()" row="2" class="primarybg" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" >
       <ns-button text="Submit" color="white"></ns-button>
     </StackLayout>

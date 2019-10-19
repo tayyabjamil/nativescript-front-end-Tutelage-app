@@ -1,0 +1,13 @@
+<GridLayout  >
+  <StackLayout [margin]="pageSide/2">
+       
+    <Label text="New Folder" horizontalAligment="center"></Label>
+    <Label text="Title" ></Label>
+    <ns-textField rcontrolname="title" [rformgroup]="rformgroup"></ns-textField>
+    <Label text="Class" ></Label>
+    <ns-textField rcontrolname="class" [rformgroup]="rformgroup"></ns-textField>
+    <Label text="Name" ></Label>
+    <ns-textField rcontrolname="name" [rformgroup]="rformgroup"></ns-textField>
+    <Button text="Create" (tap)="createFolder()"></Button>        
+  </StackLayout>
+  </GridLayout>

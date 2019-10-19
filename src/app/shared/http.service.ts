@@ -7,18 +7,11 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private serverUrl = "https://c5774178.ngrok.io";
+  private serverUrl = "https://d652376e.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
-//   getFolderDetails(){
-// let headers= this.createRequestHeader();
-// return this.http.get(this.serverUrl+'/api/getFolderDetails');
-//   }
-//   getAnnouncementDetails(){
-// let headers=this.createRequestHeader();
-// return this.http.get(this.serverUrl+'/api/getAnnouncementDetails');
-//   }
-    getUserQueries() {
+
+  getUserQueries() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/api/getUserQueries?id=' + this.authService.getUser(), { headers: headers });
   }
@@ -45,8 +38,8 @@ export class HttpService {
         adress: newQuery.adress,
         estimateAmount: newQuery.estimateAmount,
         description: newQuery.description,
-        people:newQuery.people,
-       }, { headers: headers });
+        people: newQuery.people,
+      }, { headers: headers });
   }
 
   createProfile(newUser) {
@@ -67,6 +60,35 @@ export class HttpService {
       }, { headers: headers });
   }
 
+  createAnnouncements(newAnnouncement) {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/createAnnouncements',
+      {
+        title: newAnnouncement.title,
+        type: newAnnouncement.type,
+        deadline: newAnnouncement.deadline,
+        description: newAnnouncement.description,
+      }, { headers: headers });
+  }
+  createFolders(newFolders) {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/createFolders',
+      {
+        title: newFolders.title,
+        class: newFolders.class,
+      
+        name: newFolders.name,
+      }, { headers: headers });
+  }
+
+  getFolders() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getFolders');
+  }
+  getAnnouncements() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getAnnouncements');
+  }
   login(user) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/login', { email: user.email, password: user.password, userType: user.userType }, { headers: headers });
