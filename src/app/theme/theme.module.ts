@@ -11,6 +11,8 @@ import { IconComponent } from './component/icon/icon.component';
 import { UserTypeBoxComponent } from './component/userTypeBox/userTypeBox.component';
 import { BottombarComponent } from './component/bottombar/bottombar.component';
 import { TextviewComponent } from './component/textview/textview.component';
+import { ProfiledataComponent } from './component/profiledata/profiledata.component';
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { TextviewComponent } from './component/textview/textview.component';
     NativeScriptCommonModule,
     NativeScriptFormsModule,
     ReactiveFormsModule,
+    NativeScriptUIListViewModule
 
   ],
   declarations: [
@@ -28,6 +31,7 @@ import { TextviewComponent } from './component/textview/textview.component';
      UserTypeBoxComponent,
      BottombarComponent,
      TextviewComponent,
+     ProfiledataComponent
     ],
   
   exports: [
@@ -38,6 +42,7 @@ import { TextviewComponent } from './component/textview/textview.component';
      UserTypeBoxComponent,
      BottombarComponent,
      TextviewComponent,
+     ProfiledataComponent
     
     ],
      

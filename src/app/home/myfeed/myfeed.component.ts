@@ -5,6 +5,7 @@ import { HttpService } from '~/app/shared/http.service';
 import { RouterExtensions } from 'nativescript-angular/router'
 import { NavigationExtras, ActivatedRoute } from '@angular/router';
 import { AuthService } from '~/app/shared/auth.service';
+import { Page } from 'tns-core-modules/ui/page/page';
 
 
 @Component({
@@ -23,26 +24,29 @@ export class MyfeedComponent implements OnInit {
     private httpService: HttpService,
        private routerExtensions: RouterExtensions,
        private route: ActivatedRoute,
-       private authService: AuthService) { }
+       private authService: AuthService,
+       private page:Page) { }
 
   ngOnInit() {
   const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
   const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
   this.pageSide = deviceWidth * 0.10;
   this.iconSize = deviceWidth * 0.095;
+  this.page.actionBarHidden = true;
+ 
   // this.queries = this.service.queries;
   this.getUserQueries();
   this.userType = this.authService.getUserType();
   }
+  
   getUserQueries() {
-
     this.loader = true;
     this.httpService.getUserQueries()
     .subscribe(res => {
       this.queries = res;
       this.loader = false;
       console.log(res);
-    }, (error) => {
+    }, (error) => {  
       this.loader = false;
         console.log(error);
       });

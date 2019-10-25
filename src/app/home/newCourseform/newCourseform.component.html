@@ -1,0 +1,33 @@
+<ScrollView>
+    <GridLayout rows="auto,*,auto" column="*" class="pagelightbg">
+      
+      <Label text="New Course Form" horizontalAlignment="center" [marginTop]="pageSide/4" class="Oswald mutedDark"
+        textWrap="true"></Label>
+      <GridLayout row="1" class="bgWhite" [marginTop]="pageSide/2"  [marginRight]="pageSide/2"
+        [marginLeft]="pageSide/2">
+        <StackLayout [margin]="pageSide/2">
+          <Label text="Course Name" class="Roboto mutedDark"></Label>
+          <ns-textField class="textfieldBorderColor font13" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="name"
+            [rformgroup]="rform">
+          </ns-textField>
+          <Label text="Course duration" class="Roboto mutedDark"></Label>
+          <ns-textField class="textfieldBorderColor font13" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="duration"
+            [rformgroup]="rform">
+          </ns-textField>
+          <Label text="My Experience" class="Roboto mutedDark"></Label>
+          <ns-textField class="textfieldBorderColor font13" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="mycourse"
+            [rformgroup]="rform">
+          </ns-textField>
+          <Label text="Course details" class="Roboto mutedDark"></Label>
+          <ns-textField class="textfieldBorderColor font13" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="details"
+            [rformgroup]="rform">
+          </ns-textField>
+        </StackLayout>
+        </GridLayout>     
+      <StackLayout (tap)="registerCourses()" row="2" class="primarybg" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" >
+        <ns-button text="Register" color="white"></ns-button>
+      </StackLayout>     
+    </GridLayout>
+  </ScrollView>    
+  
+      

@@ -1,0 +1,27 @@
+      
+      <GridLayout class="pagelightbg"  rows="auto,auto" >
+        <StackLayout row="0" [margin]="pageSide"  class="bgWhite">
+            <Label  text="Title" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+            <Label  [text]="requestData?.title" class="text-center sec-color font13 Roboto font-w-700 "></Label>
+            
+            <Label  text="Query Type" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+            <Label  [text]="requestData?.type" class="text-center sec-color font13 Roboto font-w-700 "></Label>
+            
+            <Label  text="Time Due" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+            <Label  class="text-center sec-color font13 Roboto font-w-700 " ></Label>
+         
+           <Label  text="Estimate Amount:" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+            <Label  [text]="requestData?.estimateAmount" class="text-center sec-color font13 Roboto font-w-700 "></Label>
+            
+          <Label  text="Description:" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
+          <Label  [text]="requestData?.description" class="text-center sec-color font13 Roboto font-w-700 "></Label>          
+        </StackLayout>
+        <GridLayout rows="auto,auto,auto" row="1" class="bgWhite" [marginTop]="pageSide*2" [margin]="pageSide" (tap)="sendRequest()">
+          <Label text="Responce:" textWrap="true"></Label>
+            <TextField row="1" hint="" text=""></TextField>
+                   
+          <Label row="2" text="Send Request" class="primarybg text-center font20" ></Label> 
+        </GridLayout> 
+       </GridLayout>
+    
+    

@@ -17,6 +17,7 @@ export class AuthService {
   getUserType() {
     return getString('userType');
   }
+
   removeLoggedIn() {
     clear();
   }

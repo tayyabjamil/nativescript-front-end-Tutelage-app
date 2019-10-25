@@ -49,7 +49,7 @@ iconSize;
         this.rform.controls['userType'].setValue(user);
       }
     }
-  }
+  }   
 
   login() {
     if (this.rform.controls['userType'].valid) {

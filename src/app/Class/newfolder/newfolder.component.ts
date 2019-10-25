@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '~/app/shared/auth.service';
 
 import * as platformModule from 'tns-core-modules/platform';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
@@ -13,11 +14,13 @@ export class NewfolderComponent implements OnInit {
   pageSide;
   iconSize;
   rformgroup: FormGroup;
+  
 
   constructor(
     private formBuilder:FormBuilder,
-    private httpService:HttpService
-
+    private httpService:HttpService,
+    private authService: AuthService
+ 
   ) { }
 
   ngOnInit() {

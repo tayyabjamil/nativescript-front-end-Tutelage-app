@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: "onBoardingFormteacher", loadChildren: "./login/login.module#LoginModule" },
     { path: "home", loadChildren: "./home/home.module#HomeModule", canActivate: [AuthGuardService]  },
     { path: "announce", loadChildren: "./home/home.module#HomeModule", canActivate: [AuthGuardService]  },
+     { path: "class", loadChildren: "./Class/Class.module#ClassModule" },
           
 ];  
 @NgModule({

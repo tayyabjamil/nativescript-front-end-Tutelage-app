@@ -12,6 +12,11 @@ import { BiddinglistComponent } from './biddinglist/biddinglist.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { MyfeedComponent } from './myfeed/myfeed.component';
 import { DropDownModule } from "nativescript-drop-down/angular";
+import { AllQueriesComponent } from './allQueries/allQueries.component';
+import { RegisterCoursesComponent } from './registerCourses/registerCourses.component';
+import { NewCourseformComponent } from './newCourseform/newCourseform.component';
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular/side-drawer-directives';
+import { SendRequestPageComponent } from './sendRequestPage/sendRequestPage.component';
 
 @NgModule({
   imports: [
@@ -20,6 +25,7 @@ import { DropDownModule } from "nativescript-drop-down/angular";
     ThemeModule,
     NativeScriptUIListViewModule,
     DropDownModule,
+    NativeScriptUISideDrawerModule,
   ],
   declarations: [
     HomeComponent,
@@ -30,8 +36,10 @@ import { DropDownModule } from "nativescript-drop-down/angular";
     NewqueryComponent,
     BiddinglistComponent,
     MyfeedComponent,
-    
-    
+    AllQueriesComponent,
+    RegisterCoursesComponent,
+    NewCourseformComponent,
+    SendRequestPageComponent
   ]
 })
 export class HomeModule { }

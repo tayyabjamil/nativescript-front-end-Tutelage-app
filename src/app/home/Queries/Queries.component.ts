@@ -5,6 +5,7 @@ import { HttpService } from '~/app/shared/http.service';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AuthService } from '~/app/shared/auth.service';
+import { Page } from 'tns-core-modules/ui/page/page';
 @Component({
   selector: 'ns-Queries',
   templateUrl: './Queries.component.html',
@@ -25,7 +26,8 @@ export class QueriesComponent implements OnInit {
     private httpService: HttpService,
     private routerExtensions: RouterExtensions,
     private route: ActivatedRoute,
-    private authService: AuthService) {
+    private authService: AuthService,
+    private page:Page) {
   }
 
   ngOnInit() {
@@ -33,6 +35,8 @@ export class QueriesComponent implements OnInit {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     this.iconSize = deviceWidth * 0.095;
+    this.page.actionBarHidden = true;
+    
     // this.queries = this.service.queries;
   
     this.getPeopleQueries();

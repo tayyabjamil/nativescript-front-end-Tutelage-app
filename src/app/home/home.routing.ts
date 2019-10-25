@@ -11,21 +11,27 @@ import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { BiddinglistComponent } from "./biddinglist/biddinglist.component";
 import { MyfeedComponent } from "./myfeed/myfeed.component";
 import { ClassComponent } from "../Class/Class.component";
+import { AllQueriesComponent } from "./allQueries/allQueries.component";
+import { RegisterCoursesComponent } from "./registerCourses/registerCourses.component";
+import { NewCourseformComponent } from "./newCourseform/newCourseform.component";
+import { SendRequestPageComponent } from "./sendRequestPage/sendRequestPage.component";
 
 export const routes: Routes = [
     {
-        path: "", component: HomeComponent,
+        path: "", component: SendRequestPageComponent,
         children: [
             { path: "newquery", component: NewqueryComponent },
             { path: "inbox", component: MessagesComponent },
-            { path: "biddinglist",component:BiddinglistComponent},
-            { path: "courses",component: CoursesComponent},
+            { path: "biddinglist", component: BiddinglistComponent },
+            { path: "courses", component: CoursesComponent },
             { path: "profile", component: ProfileComponent },
-            { path: "myfeed", component: MyfeedComponent},
-            { path: "queries", component:QueriesComponent},
-            { path: "class", loadChildren: "../Class/Class.module#ClassModule"  },
-            // { path: "class", component:ClassComponent}
-            { path: "", component: MyfeedComponent},
+            { path: "myfeed", component: MyfeedComponent },
+            { path: "queries", component: QueriesComponent },
+            { path: "class", loadChildren: "../Class/Class.module#ClassModule" },
+            { path: "allQueries", component: AllQueriesComponent },
+            { path: "newCourseForm", component: NewCourseformComponent },
+            { path: "request", component: SendRequestPageComponent },
+            { path: "", component: MyfeedComponent },
         ]
     },
 ];

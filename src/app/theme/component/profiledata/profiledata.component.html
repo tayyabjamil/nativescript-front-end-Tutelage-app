@@ -1,0 +1,26 @@
+<GridLayout  >
+  <GridLayout *ngIf="userType === 'student'"  >
+<Label text="student" textWrap="true"></Label>
+
+    </GridLayout>
+  <GridLayout *ngIf="userType === 'teacher'"  >
+               
+    <RadListView [items]="course">
+          <ng-template tkListItemTemplate let-item="item">
+              <StackLayout [margin]="pageSide/4">
+                  <StackLayout orientation="horizontal">
+                      <Label text="Course Name:" class="mutedDark font16" textWrap="true"></Label>
+                      <Label [text]="item.name" [marginLeft]="pageSide"></Label>
+                  </StackLayout>
+                  <Label [text]="item.duration"></Label>
+            <Label text="Details:" class="mutedDark font16" textWrap="true"></Label>
+                  <Label [text]="item.details" textWrap="true"></Label>
+              </StackLayout>
+          </ng-template>
+          <ng-template tkListViewFooter>
+              <GridLayout class="p-b-150"></GridLayout>
+          </ng-template>    
+      </RadListView>
+
+  </GridLayout>
+</GridLayout>

@@ -1,19 +1,19 @@
 import { RouterExtensions } from 'nativescript-angular/router';
-import { Component, OnInit,Input, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter } from "@angular/core";
 import { AnimationCurve } from "ui/enums";
 import { screen } from "platform";
 import { setTimeout } from "timer";
 import * as platformModule from 'tns-core-modules/platform';
 @Component({
-  selector: 'ns-bottombar',
-  templateUrl: './bottombar.component.html',
-  styleUrls: ['./bottombar.component.scss']
+	selector: 'ns-bottombar',
+	templateUrl: './bottombar.component.html',
+	styleUrls: ['./bottombar.component.scss']
 })
 export class BottombarComponent implements OnInit {
 
-  @Input() userType;
-  onSelectUserType;
-iconSize;
+	@Input() userType;
+	onSelectUserType;
+	iconSize;
 	@ViewChild('tabHighlight', { static: false }) tabHighlight: ElementRef;
 	selectedTab: number = 0;
 
@@ -25,21 +25,22 @@ iconSize;
 
 	@Output() tabSelected = new EventEmitter<number>();
 
-  constructor(private routerExtensions: RouterExtensions) { }
+	constructor(private routerExtensions: RouterExtensions) { }
 
-  ngOnInit() {
-    const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
-    this.iconSize = deviceWidth * 0.095;
-  }
-  onAccountSelection(user) {
-    this.userType = user;
-    this.onSelectUserType.emit(user);
-  }
+	ngOnInit() {
+		const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
+		this.iconSize = deviceWidth * 0.095;
+	}
+	onAccountSelection(user) {
+		this.userType = user;
+		this.onSelectUserType.emit(user);
+	}
 
-  get showType() {
-    return this.userType;
-  }
-  ngAfterViewInit() {
+	get showType() {
+		return this.userType;
+	}
+
+	ngAfterViewInit() {
 		setTimeout(() => { this.animateCurrentImage(this.image1); }, 100);
 	}
 
@@ -84,7 +85,7 @@ iconSize;
 	animateCurrentImage(arg: any) {
 		arg.nativeElement.animate({
 			scale: { x: 1.2, y: 1.2 },
-			curve: AnimationCurve.cubicBezier(1, .02, .45, .93 ),
+			curve: AnimationCurve.cubicBezier(1, .02, .45, .93),
 			duration: 800
 		});
 	}
@@ -92,12 +93,12 @@ iconSize;
 	animatePreviousImage(arg: any) {
 		arg.nativeElement.animate({
 			scale: { x: 1, y: 1 },
-			curve: AnimationCurve.cubicBezier(1, .02, .45, .93 ),
+			curve: AnimationCurve.cubicBezier(1, .02, .45, .93),
 			duration: 800
 		})
 	}
-  onNavigate(url) {
-    this.routerExtensions.navigate([url])    
-  }
+	onNavigate(url) {
+		this.routerExtensions.navigate([url])
+	}
 
 }

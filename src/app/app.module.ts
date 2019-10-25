@@ -17,6 +17,8 @@ import { AuthService } from "./shared/auth.service";
 import { AuthGuardService } from "./shared/authGuard.service";
 import { ClassModule } from "./Class/Class.module";
 // import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+
 
 @NgModule({
    bootstrap: [
@@ -28,7 +30,7 @@ import { ClassModule } from "./Class/Class.module";
       ThemeModule,
       LoginModule,
       NativeScriptHttpClientModule,
-      ClassModule
+      
       //NativeScriptUIListViewModule
    ],
    declarations: [

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import * as platformModule from 'tns-core-modules/platform';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { PageService } from '~/app/theme/services/page.service';
@@ -21,6 +21,9 @@ export class ProfileComponent implements OnInit {
   profileData;
   profile;
 iconSize;
+course;
+@Input() userType;
+onSelectUserType;
   constructor(
    private httpService:HttpService,
     private _page: Page, 
@@ -38,14 +41,17 @@ iconSize;
    
     this.pageSide = this.pageService.pageSidePadding();
     this._page.actionBarHidden = true;
+    this.userType = this.authService.getUserType();
+
     //this.profileData = this.dataService.profileData;
     this.getUserProfile();
   }
+  
   getUserProfile() {
     this.httpService.getUserProfile()
     .subscribe(res => {
       this.profile = res[0];
-      console.log(res);
+    
     }, (error) => {
       console.log(error);
     });
@@ -59,5 +65,13 @@ iconSize;
       }
     });
   }
+  onAccountSelection(user) {
+    this.userType = user;
+    this.onSelectUserType.emit(user);
+  }
 
+  get showType() {
+    return this.userType;
+  }
+  
 }

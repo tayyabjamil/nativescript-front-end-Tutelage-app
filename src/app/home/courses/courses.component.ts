@@ -28,19 +28,6 @@ ngOnInit(){
   const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
   this.pageSide = deviceWidth * 0.10;
   this.iconSize = deviceWidth * 0.095;
- this.getPeopleQueries();
 }
- getPeopleQueries() {
-
-    this.loader = true;
-    this.httpService.getPeopleQueries()
-    .subscribe(res => {
-      this.queries = res;
-      this.loader = false;
-      console.log(res);
-    }, (error) => {
-      this.loader = false;
-        console.log(error);
-      });
-  }
+ 
 }

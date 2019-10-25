@@ -10,18 +10,17 @@ import { FoldersComponent } from "./Folders/Folders.component";
 import { NewfolderComponent } from "./newfolder/newfolder.component";
 import { QuestionAnswersComponent } from "./QuestionAnswers/QuestionAnswers.component";
 import { PeopleComponent } from "./People/People.component";
+import { ClassComponent } from "./Class.component";
 
 export const routes: Routes = [
-    {
-        path: "", component: PeopleComponent
-    },
     { path: "newannounce", component: NewannouncmentsComponent },
     { path: "announcments", component: AnnouncementsComponent },
     { path: "discussion", component: DiscussionComponent },
     { path: "folders", component: FoldersComponent },
-    { path: "newfolder", component:NewfolderComponent},
-    { path:"QnAs",component:QuestionAnswersComponent},
-    {path:"people",component:PeopleComponent}
+    { path: "newfolder", component: NewfolderComponent },
+    { path: "QnAs", component: QuestionAnswersComponent },
+    { path: "people", component: PeopleComponent },
+    { path: "", component: FoldersComponent },
 ];
 
 @NgModule({

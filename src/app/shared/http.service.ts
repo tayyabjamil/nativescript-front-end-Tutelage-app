@@ -6,25 +6,56 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class HttpService {
-
-  private serverUrl = "https://d652376e.ngrok.io";
+  private serverUrl = "https://4980e649.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
+  login(user) {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/login', { email: user.email, password: user.password, userType: user.userType }, { headers: headers });
+  }
+
+  getFolders() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getFolders?profile_id=' + this.authService.getUser(), { headers: headers });
+  }
+
 
   getUserQueries() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/api/getUserQueries?id=' + this.authService.getUser(), { headers: headers });
+  }
+  getUserCourses() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getUserCourses?profile_id=' + this.authService.getUser(), { headers: headers });
+  }
+
+  getFolderAnnouncement(folderId) {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getFolderAnnouncement?profile_id='+ this.authService.getUser()+'&folder_id='+ folderId,{ headers: headers });
   }
 
   getUserProfile() {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/getUserProfile?id=' + this.authService.getUser(), { headers: headers });
   }
+
   getPeopleQueries() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/api/getPeopleQueries');
   }
 
+  createCourses(newCourse) {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/createCourses',
+      {
+        profile_id: newCourse.profile_id,
+        name: newCourse.name,
+        duration: newCourse.duration,
+        details: newCourse.details,
+
+      }, { headers: headers });
+
+  }
   createQueries(newQuery) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/createQueries',
@@ -60,7 +91,7 @@ export class HttpService {
       }, { headers: headers });
   }
 
-  createAnnouncements(newAnnouncement) {
+  createAnnouncements(newAnnouncement, folderId) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/createAnnouncements',
       {
@@ -68,31 +99,22 @@ export class HttpService {
         type: newAnnouncement.type,
         deadline: newAnnouncement.deadline,
         description: newAnnouncement.description,
+        profile_id: this.authService.getUser(),
+        folder_id: folderId
       }, { headers: headers });
   }
+
   createFolders(newFolders) {
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/createFolders',
       {
+        profile_id: this.authService.getUser(),
         title: newFolders.title,
         class: newFolders.class,
-      
         name: newFolders.name,
       }, { headers: headers });
   }
 
-  getFolders() {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/api/getFolders');
-  }
-  getAnnouncements() {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/api/getAnnouncements');
-  }
-  login(user) {
-    let headers = this.createRequestHeader();
-    return this.http.post(this.serverUrl + '/api/login', { email: user.email, password: user.password, userType: user.userType }, { headers: headers });
-  }
 
   private createRequestHeader() {
     // set headers here e.g.
