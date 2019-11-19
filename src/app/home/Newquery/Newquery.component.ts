@@ -76,7 +76,7 @@ export class NewqueryComponent implements OnInit {
   }
 
   storedata() {
-    this.httpSerivce.createQueries(this.rform.value)
+    this.httpSerivce.createQuery(this.rform.value)
       .subscribe(res => {
         console.log(res);
       }, (error) => {

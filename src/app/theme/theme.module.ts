@@ -13,6 +13,7 @@ import { BottombarComponent } from './component/bottombar/bottombar.component';
 import { TextviewComponent } from './component/textview/textview.component';
 import { ProfiledataComponent } from './component/profiledata/profiledata.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { InputControlSelectorComponent } from './component/inputControlSelector/inputControlSelector.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
      UserTypeBoxComponent,
      BottombarComponent,
      TextviewComponent,
-     ProfiledataComponent
+     ProfiledataComponent,
+     InputControlSelectorComponent
     ],
   
   exports: [
@@ -42,7 +44,8 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
      UserTypeBoxComponent,
      BottombarComponent,
      TextviewComponent,
-     ProfiledataComponent
+     ProfiledataComponent,
+     InputControlSelectorComponent
     
     ],
      

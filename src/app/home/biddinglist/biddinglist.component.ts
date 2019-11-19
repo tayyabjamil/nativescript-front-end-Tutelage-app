@@ -19,18 +19,17 @@ export class BiddinglistComponent implements OnInit {
   previewSize;
   iconSize;
   data;
+  queryResponce;
+  responceProfile;
+  queryId;
+  responceList;
+
   constructor(
     private httpService: HttpService,
     private routerExtensions: RouterExtensions,
     private route: ActivatedRoute,
     private pageService: PageService
   ) {
-    this.route.queryParams.subscribe(params => {
-      let data = JSON.parse(params["data"]);
-      this.queries = data.data;
-      console.log('----------------------');
-      console.log(this.queries);
-    })
   }
 
   ngOnInit() {
@@ -39,17 +38,57 @@ export class BiddinglistComponent implements OnInit {
     this.pageSide = this.pageService.pageSidePadding();
     this.previewSize = deviceWidth * 0.20;
     this.iconSize = deviceWidth * 0.095;
-    // this.getUserQueries();
+
+    this.route.queryParams.subscribe(params => {
+      let data = JSON.parse(params["data"]);
+      console.log('----------------------');
+      console.log(data);
+      this.queryId = data.queries_id;
+      this.getBiddingResponce(this.queryId);
+      // this.getBiddingsProfiles(this.queryId);
+    })   
+    
   }
 
-  // getUserQueries() {
-  //   this.httpService.getUserQueries()
-  //   .subscribe(res => {
-  //     this.queries = res;
-  //     console.log(res);
-  //   }, (error) => {
-  //     console.log(error);
-  //   });
+  // getBiddingsProfiles(queryId) {
+  //   this.httpService.getBiddingsProfiles(queryId)
+  //     .subscribe(res => {
+  //       console.log(res);
+  //       this.responceProfile = res;
+  //       this.responceProfile = [].concat(...this.responceProfile);
+  //       console.dir(this.responceProfile);
+  //       setTimeout(() => {
+  //         this.getResponseList();
+  //       }, 1000);
+  //     }, (error) => {
+  //       console.log(error);
+  //     });
   // }
 
+  getBiddingResponce(queryId) {
+    this.httpService.getBiddingResponces(queryId)
+      .subscribe(res => {
+        console.log(res);
+        this.queryResponce = res;
+        // setTimeout(() => {
+        //   this.getResponseList();
+        // }, 1000);
+      }, (error) => {
+        console.log(error);
+      });
+  }
+
+  // getResponseList() {
+  //   if(this.responceProfile && this.queryResponce) {
+  //     this.responceList = [ ...this.responceProfile, ...this.queryResponce];
+  //   console.log(this.responceList);
+  //   }
+  // }
+
+
+  biddingPerson() {
+    this.routerExtensions.navigate(['home/biddingPerson']);
+  }
+
 }
+

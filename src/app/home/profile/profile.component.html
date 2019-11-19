@@ -1,18 +1,19 @@
-<GridLayout rows="" columns="">
-    
-</GridLayout>   
-
- <ScrollView class="pagelightbg ">
+<ScrollView class="pagelightbg ">
     <GridLayout rows="auto,auto,auto,auto" class="p-b-100" columns="*">
-        <Image [height]="previewSize" style="  border-radius: 40%" [marginTop]="pageSide/2" [width]="previewSize"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkTkxvlVSXCW0Avw0qipbUSd7CFnjPZ_PdEson-QeJk1WSbv8rg"
-            class="thumb img-circle"></Image>
-
+        <GridLayout row="0" [height]="previewSize*2" style="background-color: #1d4354;"  rows="" columns="auto,auto">
+            
+        
+        <Image [width]="previewSize" horizontalAlignment="left" [marginLeft]="pageSide" [height]="previewSize" style="border-radius: 30%;background-size: cover;"  
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNc1rx8nMzFAfYBDgyXQvJKKVW5sG56BztTV25cESDtNOKOmSiLA&s"
+            class="thumb img-circle" ></Image>
+            <Label col="1" [text]="profile.user_name" class="primaryColor" verticalAlignment="center" [paddingTop]="pageSide*2" textWrap="true"></Label>
+            
+        </GridLayout>
         <Label [text]="profile?.username" row="1"
-            class="f-22 text-center capitalize  mutedDark f-bold m-l-30 m-t-5 m-r-30 Roboto" textWrap="true"></Label>
-        <GridLayout rows="auto,auto,auto,auto" row="2" [marginTop]="previewSize/4" [marginLeft]="pageSide"
+            class="f-22 text-center capitalize  mutedDark f-bold m-l-30  m-r-30 Roboto" textWrap="true"></Label>
+        <GridLayout rows="auto,auto,auto,auto" row="2"  [marginLeft]="pageSide"
             [marginRight]="pageSide">
-            <Label text="PERSONAL" horizontalAlignment="center" class="font20 mutedDark" textWrap="true"></Label>
+            <Label text="PERSONAL" horizontalAlignment="center" [paddingBottom]="pageSide/2" class="font20 mutedDark" textWrap="true"></Label>
             <StackLayout row="1" class="bgWhite boxBorder">
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
@@ -26,7 +27,7 @@
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <Image col="0" src="~/assets/images/phone.png" stretch="aspectFit" [marginTop]="iconSize/8"
+         <Image col="0" src="~/assets/images/phone.png" stretch="aspectFit" [marginTop]="iconSize/8"
                         [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
                     <Label col="1" [marginLeft]="pageSide" text="Contact" style="padding-top: 10%"
                         class="mutedDark "></Label> 

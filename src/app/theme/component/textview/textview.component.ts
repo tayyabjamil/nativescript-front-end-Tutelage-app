@@ -8,6 +8,7 @@ import { PageService } from '../../services/page.service';
 })
 export class TextviewComponent implements OnInit {
 pageSide;
+@Input() hint;
   constructor(private pageService:PageService) { }
 
   ngOnInit() {

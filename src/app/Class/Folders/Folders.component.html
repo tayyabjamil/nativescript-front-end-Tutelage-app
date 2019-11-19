@@ -2,7 +2,7 @@
 
   <Image (tap)="newfolder()" class="p-b-5" verticalAlignment="bottom" horizontalAlignment="right"
     src="~/assets/images/composer.png" [height]="iconSize" [width]="iconSize"></Image>
-   
+     
   <RadListView row="1" [items]="folder">
     <ng-template tkListItemTemplate let-item="item">
       <GridLayout row="0" [height]="boxSize/2" [margin]="pageSide/4" rows="auto,auto,auto" columns="*,auto"

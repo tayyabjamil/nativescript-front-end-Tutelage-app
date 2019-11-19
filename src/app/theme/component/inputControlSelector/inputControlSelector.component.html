@@ -1,0 +1,25 @@
+<ng-container *ngFor="let form of generateForm">
+  <StackLayout>
+    <!-- <ns-formTitle [text]="form.formTitle"></ns-formTitle> -->
+    <Label [text]="form.formTitle" class="font18 fontw500 mutedColor" textWrap="true"></Label>
+
+    <ng-container *ngFor="let item of form.formFields">
+      <ng-container *ngIf="checkType(item) == 'object'">
+        <ng-container *ngIf="item.inputType=='textField'">
+          <ns-textField col="0" [rformgroup]="rformGroup" [rcontrolname]="item.formControlName" [hint]="item.hint">
+          </ns-textField>
+        </ng-container>
+
+        <ng-container *ngIf="item.inputType=='textArea'">
+          <ns-textview [rformgroup]="rformGroup" [rcontrolname]="item.formControlName" col="1" [hint]="item.hint"></ns-textview>
+        </ng-container>
+      </ng-container>
+
+      <GridLayout rows="auto" columns="*,*" *ngIf="checkType(item) == 'array'">
+        <ng-continer *ngFor="let inputItem of item; let i=index">
+          <ns-textField [rformgroup]="rformGroup" [rcontrolname]="inputItem.formControlName" [col]="i" [hint]="inputItem.hint"></ns-textField>
+        </ng-continer>
+      </GridLayout>
+    </ng-container>
+  </StackLayout>
+</ng-container>

@@ -36,18 +36,18 @@ export class FoldersComponent implements OnInit {
   getFolders() {
     this.loader = true;
    
-    this.httpService.getFolders()
-      .subscribe(res => {
-        debugger;
-        this.folder = res;
-        this.loader = false;
+    // this.httpService.getFolders()
+      // .subscribe(res => {
+      //   debugger;
+      //   this.folder = res;
+      //   this.loader = false;
   
-        console.log(res);
-      }, (error) => {
-        this.loader = false;
+      //   console.log(res);
+      // }, (error) => {
+      //   this.loader = false;
      
-        console.log(error);
-      });
+      //   console.log(error);
+      // });
   }
 
   newfolder() {

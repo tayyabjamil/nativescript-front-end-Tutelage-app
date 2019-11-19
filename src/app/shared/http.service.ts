@@ -6,19 +6,23 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class HttpService {
-  private serverUrl = "https://4980e649.ngrok.io";
+  private serverUrl = "https://a6dd4bb4.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
-  login(user) {
+  login(user) {   
     let headers = this.createRequestHeader();
     return this.http.post(this.serverUrl + '/api/login', { email: user.email, password: user.password, userType: user.userType }, { headers: headers });
   }
-
-  getFolders() {
+  getBiddingResponces(queryId) {
     let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/api/getFolders?profile_id=' + this.authService.getUser(), { headers: headers });
+    return this.http.get(this.serverUrl + '/api/getBiddingResponces?profile_id=' + this.authService.getUser()
+    + '&query_id=' + queryId, { headers: headers });
   }
-
+  getBiddingProfiles(queryId) {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/api/getBiddingProfiles?profile_id=' + this.authService.getUser()
+     + '&query_id=' + queryId, {  headers: headers });
+  }
 
   getUserQueries() {
     let headers = this.createRequestHeader();
@@ -36,7 +40,7 @@ export class HttpService {
 
   getUserProfile() {
     let headers = this.createRequestHeader();
-    return this.http.post(this.serverUrl + '/api/getUserProfile?id=' + this.authService.getUser(), { headers: headers });
+    return this.http.get(this.serverUrl + '/api/getUserProfile?id=' + this.authService.getUser(), { headers: headers });
   }
 
   getPeopleQueries() {
@@ -56,9 +60,21 @@ export class HttpService {
       }, { headers: headers });
 
   }
-  createQueries(newQuery) {
+  createBidding(newResponce,queryId) {
     let headers = this.createRequestHeader();
-    return this.http.post(this.serverUrl + '/api/createQueries',
+    return this.http.post(this.serverUrl + '/api/createBidding',
+      {
+    
+        profile_id: this.authService.getUser(),
+        responce: newResponce.responce,
+        queries_id: queryId
+      }, { headers: headers });
+
+  }
+
+  createQuery(newQuery) {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/createQuery',
       {
 
         profile_id: newQuery.profile_id,

@@ -1,5 +1,5 @@
 <GridLayout row="1">
-  <GridLayout *ngIf="userType === 'student'" columns="*,*,*,*" rows="auto" class="pagebg">
+  <GridLayout *ngIf="userType === 'student'" columns="*,*,*" rows="auto" class="pageBg">
 
     <GridLayout #tabHighlight col="0" style="border-bottom-color: rgba(110,219,68,1); border-bottom-width: 3dp">
     </GridLayout>
@@ -19,12 +19,8 @@
       </Image>
       <Label text="Profile" (tap)="onNavigate('home/profile')" horizontalAlignment="center"></Label>
     </StackLayout>
-    <StackLayout row="0" col="3" (tap)="selectTab(2)" padding="10">
-      <Image #image5 src="~/assets/images/message.png" (tap)="onNavigate('home/class')" height="35" width="25"></Image>
-      <Label text="Class" (tap)="onNavigate('home/class')" horizontalAlignment="center"></Label>
-    </StackLayout>
-  </GridLayout>
-  <GridLayout *ngIf="userType === 'teacher'" columns="*,*,*,*,*" rows="auto" class="pagebg">
+   </GridLayout>
+  <GridLayout *ngIf="userType === 'teacher'" columns="*,*,*,*" rows="auto" class="pagebg">
     <GridLayout #tabHighlight col="0"></GridLayout>
 
     <StackLayout row="0" col="0" (tap)="selectTab(0)" padding="10">
@@ -51,10 +47,6 @@
       <Label text="Profile" (tap)="onNavigate('home/profile')" horizontalAlignment="center"
         style="padding-bottom: 5"></Label>
  
-    </StackLayout>
-    <StackLayout row="0" col="4" (tap)="selectTab(2)" padding="10">
-      <Image #image5 src="~/assets/images/course.png" (tap)="onNavigate('home/class')" height="35" width="25"></Image>
-      <Label text="Class" (tap)="onNavigate('home/class')" horizontalAlignment="center"></Label>
     </StackLayout>
   </GridLayout>
 </GridLayout>

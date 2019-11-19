@@ -1,4 +1,17 @@
-<ScrollView>
+<ScrollView> 
+  <GridLayout rows="*,auto" [marginTop]="pageSide" [marginRight]="pageSide/2" [marginLeft]="pageSide/2">
+    <StackLayout row="0" >
+      <ns-inputControlSelector [rformGroup]="onBoardingForm" [generateForm]="formData"></ns-inputControlSelector>
+    </StackLayout>
+    
+    <GridLayout row="1" rows=""  columns="" [marginLeft]="pageSide*7" [marginBottom]="pageSide" [marginRight]="pageSide/2" class="radius  primaryBg ">
+      <ns-button (onTap)="onSubmit()"  text="Create"></ns-button>
+    </GridLayout>
+       
+  </GridLayout>      
+       
+</ScrollView>
+<!-- <ScrollView>      
 
   <GridLayout rows="auto,*,auto" style="background-color: #1d4354">
       <Label row="0" text="Register Here" class="text-center Oswald  m-t-15 m-b-15" style="color: rgb(138, 223, 102) "></Label>
@@ -41,10 +54,10 @@
       </ng-template>
       <ng-template pagerTemplateKey="professionalInfo" let-i="index" let-item="item">
         <GridLayout class="pager-item" columns="*">
-          <!-- <GridLayout    [marginRight]="pageSide" [marginLeft]="pageSide">
+           <GridLayout    [marginRight]="pageSide" [marginLeft]="pageSide">
               <ns-image-upload></ns-image-upload>
             </GridLayout>
-           -->
+           
     
           <StackLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginRight]="pageSide"
           [marginLeft]="pageSide">
@@ -68,7 +81,7 @@
 
     <GridLayout row="2" [marginBottom]="pageSide" class=" mutedDark primaryColor primarybg " [marginLeft]="pageSide"
       [marginRight]="pageSide">
-      <ns-button (onTap)="onSubmit()" row="1" col="1" text="Next"></ns-button>
+      <ns-button (onTap)="onSubmit()" row="1" col="1" text="Create"></ns-button>
     </GridLayout>
   </GridLayout>
-</ScrollView>
+</ScrollView> -->

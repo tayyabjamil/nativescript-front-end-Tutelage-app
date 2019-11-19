@@ -18,7 +18,7 @@ import { SendRequestPageComponent } from "./sendRequestPage/sendRequestPage.comp
 
 export const routes: Routes = [
     {
-        path: "", component: SendRequestPageComponent,
+        path: "", component: HomeComponent,
         children: [
             { path: "newquery", component: NewqueryComponent },
             { path: "inbox", component: MessagesComponent },

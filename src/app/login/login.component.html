@@ -5,7 +5,7 @@
       <Label text="Choose Account Type " [marginTop]="pageSide" class=" text-center fontoswald mutedDark font-w-900"></Label>
 
       <ns-userTypeBox row="1" (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
-
+           
       <Label row="2" [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" style="font-size: 20%"
         class="Oswaldbig text-center mutedDark font-w-700" [marginTop]="pageSide" [marginBottom]="pageSide"></Label>
       <Label row="3" text="Please fill  out the form below to get started"
@@ -20,7 +20,7 @@
         
         <ns-textField  class="textfieldBorderColor  font13" [rformgroup]="rform" rcontrolname="password">
         </ns-textField>
-
+   
       </StackLayout>
 
 

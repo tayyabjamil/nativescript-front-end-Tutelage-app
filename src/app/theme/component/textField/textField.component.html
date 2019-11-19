@@ -1,4 +1,4 @@
-<StackLayout [row]="row" [col]="col" [formGroup]="rformgroup">
+<!-- <StackLayout [row]="row" [col]="col" [formGroup]="rformgroup">
  <TextField  [hint]="rtext" [formControlName]="rcontrolname"
   [class]="class"    [ngClass]="{ errorBorder :invalidControl}" ></TextField>
   <Label text="incomplete input " *ngIf="errorRequired" class="errorlbl"></Label>
@@ -6,4 +6,11 @@
   <Label text="length is incorrect" *ngIf="errorLength" class="errorlbl"></Label> 
 </StackLayout>
 
-  
+-->
+
+<StackLayout [row]="row" [formGroup]="rformgroup" [col]="col" [margin]="pageSide/4">
+  <TextField [hint]="hint" [formControlName]="rcontrolname" class="mutedBg radius"></TextField>
+  <!-- <Label text="incomplete input " *ngIf="errorRequired" class="errorlbl"></Label>
+  <Label text="format is incorrect" *ngIf="errorFormate" class="errorlbl"></Label>
+  <Label text="length is incorrect" *ngIf="errorLength" class="errorlbl"></Label> -->
+</StackLayout>

@@ -50,7 +50,7 @@ iconSize;
       }
     }
   }   
-
+     
   login() {
     if (this.rform.controls['userType'].valid) {
       if (this.rform.valid) {
@@ -66,6 +66,7 @@ iconSize;
           }
         }, (error) => {
           this.isBusy = false;
+          alert("No Account Found");
           console.log(error)
         })
       }
