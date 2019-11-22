@@ -43,38 +43,26 @@ export class BiddinglistComponent implements OnInit {
       let data = JSON.parse(params["data"]);
       console.log('----------------------');
       console.log(data);
-      this.queryId = data.queries_id;
+      this.queryId = data.data.id;
       this.getBiddingResponce(this.queryId);
-      // this.getBiddingsProfiles(this.queryId);
+       this.getBiddingsProfiles(this.queryId);
     })   
     
   }
 
-  // getBiddingsProfiles(queryId) {
-  //   this.httpService.getBiddingsProfiles(queryId)
-  //     .subscribe(res => {
-  //       console.log(res);
-  //       this.responceProfile = res;
-  //       this.responceProfile = [].concat(...this.responceProfile);
-  //       console.dir(this.responceProfile);
-  //       setTimeout(() => {
-  //         this.getResponseList();
-  //       }, 1000);
-  //     }, (error) => {
-  //       console.log(error);
-  //     });
-  // }
+  getBiddingsProfiles(queryId) {
+    this.httpService.getBiddingProfiles(queryId)
+      .subscribe(res => {
+        this.responceProfile = res;
+       }, (error) => {
+      });
+  }
 
   getBiddingResponce(queryId) {
     this.httpService.getBiddingResponces(queryId)
       .subscribe(res => {
-        console.log(res);
         this.queryResponce = res;
-        // setTimeout(() => {
-        //   this.getResponseList();
-        // }, 1000);
       }, (error) => {
-        console.log(error);
       });
   }
 

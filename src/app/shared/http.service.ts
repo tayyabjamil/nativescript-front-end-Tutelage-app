@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class HttpService {
-  private serverUrl = "https://a6dd4bb4.ngrok.io";
+  private serverUrl = "https://3e0b0047.ngrok.io";
   constructor(private http: HttpClient,
     private authService: AuthService) { }
   login(user) {   
@@ -56,13 +56,13 @@ export class HttpService {
         name: newCourse.name,
         duration: newCourse.duration,
         details: newCourse.details,
-
+        modules:newCourse.modules
       }, { headers: headers });
 
   }
-  createBidding(newResponce,queryId) {
+  createBiddings(newResponce,queryId) {  
     let headers = this.createRequestHeader();
-    return this.http.post(this.serverUrl + '/api/createBidding',
+    return this.http.post(this.serverUrl + '/api/createBiddings',
       {
     
         profile_id: this.authService.getUser(),

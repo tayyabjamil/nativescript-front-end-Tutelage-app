@@ -1,14 +1,15 @@
+
 <GridLayout rows="auto,auto,*" columns="" class="pagelightbg">
    <SearchBar  row="0" hint="Search for queries" [margin]="pageSide/4" ></SearchBar> 
-     
+       
     <RadListView row="1" [items]="queries">
       <ng-template tkListItemTemplate let-item="item">
-        <GridLayout [margin]="pageSide/4" (tap)="Request(item)"  rows="auto,auto,auto,auto" backgroundColor="white"
+        <GridLayout [margin]="pageSide/4" (tap)="Request(item)"  rows="auto,auto,auto,auto" class="mutedBg"
           [paddingLeft]="pageSide/ 2"   [paddingRight]="pageSide/2"
           columns="*,*,*">
           <Label col="0" text="2 min ago" class="text-left p-b-2   f-w-600 mutedColor font13  Roboto"></Label>
           <Label col="0" row="1" colSpan="3" [text]="item.title" class="font16 font-w-700 Roboto mutedDark"></Label>
-       
+                
           <GridLayout rows="auto,auto,auto" col="0" row="2">
             <Image src="~/assets/images/deadline.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
               [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>

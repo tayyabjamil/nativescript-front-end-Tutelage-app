@@ -37,7 +37,6 @@ export class NewqueryComponent implements OnInit {
       fromDate: new FormControl('', [Validators.required]),
       toDate: new FormControl('', [Validators.required]),
       estimateAmount: new FormControl('', [Validators.required,]),
-      adress: new FormControl("", [Validators.required]),
       description: new FormControl('', [Validators.required]),
       people:new FormControl('',Validators.required)
     });
@@ -78,8 +77,9 @@ export class NewqueryComponent implements OnInit {
   storedata() {
     this.httpSerivce.createQuery(this.rform.value)
       .subscribe(res => {
-        console.log(res);
+        alert("query posed");
       }, (error) => {
+        alert("Error");
         console.log(error);
       });
   }

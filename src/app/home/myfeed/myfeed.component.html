@@ -1,9 +1,9 @@
 
-<AbsoluteLayout class="layout pagelightbg">
+<AbsoluteLayout class="layout">
       
   <RadListView [items]="queries" class="radViewList">
     <ng-template tkListItemTemplate let-item="item">
-      <GridLayout (tap)="bidinglist(item)" [marginTop]="pageSide/4"  rows="auto,auto,auto,auto,auto" backgroundColor="white"
+      <GridLayout (tap)="bidinglist(item)" [marginTop]="pageSide/4"  rows="auto,auto,auto,auto,auto" class="mutedBg"
         [paddingLeft]="pageSide/ 2" [paddingTop]="pageSide/ 4" [paddingBottom]="pageSide/4" [paddingRight]="pageSide/2"
         columns="*,*,*">
              
@@ -24,9 +24,9 @@
           <Image src="~/assets/images/notebook.png" stretch="aspectFit" [marginTop]="iconSize/8"
             [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
           <Label row="1" class="text-center sec-color font13 Roboto font-w-700 " text="Type"></Label>
-          <Label row="2" class="text-center mutedColor Roboto font12" text="Assingment"></Label>
+          <Label row="2" class="text-center mutedColor Roboto font12" [text]="item.type"></Label>
         </GridLayout>
-
+  
         <GridLayout rows="auto,auto,auto" col="2" row="2">
           <Image src="~/assets/images/dollar.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
             [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>

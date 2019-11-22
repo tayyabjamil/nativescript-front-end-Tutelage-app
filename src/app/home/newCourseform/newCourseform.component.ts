@@ -34,7 +34,7 @@ rform:FormGroup
       profile_id: new FormControl(this.authService.getUser(), [Validators.required]),
       name: new FormControl('', [Validators.required]),
       duration: new FormControl('', [Validators.required]),
-      mycourse: new FormControl('', [Validators.required,]),
+      modules: new FormControl('', [Validators.required,]),
       details: new FormControl('', [Validators.required]),
      });
     
@@ -42,9 +42,9 @@ rform:FormGroup
 registerCourses(){
   this.httpSerivce.createCourses(this.rform.value)
     .subscribe(res => {
-      console.log(res);
+      alert("course Registered");
     }, (error) => {
-      console.log(error);
+      alert("course Not Registered");
     });
 
 }

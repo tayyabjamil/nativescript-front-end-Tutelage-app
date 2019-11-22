@@ -5,11 +5,11 @@
 <GridLayout class="pagelightbg" rows="auto,auto">
   <StackLayout row="0" [margin]="pageSide" class="bgWhite" [marginTop]="pageSide*3">
     <Label text="Title" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
-    <Label [text]="requestData?.title" class="text-center sec-color font13 Roboto font-w-700 "></Label>
-
+    <Label [text]="requestData.title" class="text-center sec-color font13 Roboto font-w-700 "></Label>
+   
     <Label text="Query Type" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
     <Label [text]="requestData?.type" class="text-center sec-color font13 Roboto font-w-700 "></Label>
-
+             
     <Label text="Time Due" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
     <Label class="text-center sec-color font13 Roboto font-w-700 "></Label>
 
@@ -17,8 +17,8 @@
     <Label [text]="requestData?.estimateAmount" class="text-center sec-color font13 Roboto font-w-700 "></Label>
 
     <Label text="Description:" class="font16 font-w-600 Roboto mutedDark" textWrap="true"></Label>
-
-
+     
+     
     <Label [text]="requestData?.description" class="text-center sec-color font13 Roboto font-w-700 "
       textWrap="true"></Label>
   </StackLayout>

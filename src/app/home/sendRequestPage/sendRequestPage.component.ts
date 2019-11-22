@@ -40,7 +40,7 @@ requestData;
       let data  = JSON.parse(params["data"]);
       console.log('-------------in the new announcements ---------');
       console.log(data);
-      this.queryId = data.queries_id;
+      this.queryId = data.data.id;
     })
    
    }
@@ -62,7 +62,7 @@ requestData;
   }
 sendRequest() {
     
-  this.httpSerivce.createBidding(this.rform.value,this.queryId)
+  this.httpSerivce.createBiddings(this.rform.value,this.queryId)
     .subscribe(res => {
     alert("Request Sent");
       console.log(res);

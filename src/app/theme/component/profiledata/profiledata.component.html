@@ -1,11 +1,12 @@
 <GridLayout  >
   <GridLayout *ngIf="userType === 'student'"  >
-<Label text="student" textWrap="true"></Label>
 
     </GridLayout>
-  <GridLayout *ngIf="userType === 'teacher'"  >
-               
-    <RadListView [items]="course">
+  <GridLayout rows="auto,*" *ngIf="userType === 'teacher'"  >
+    <Label  row="0" text="Registered Courses" horizontalAlignment="center" class="font20 mutedDark"
+    textWrap="true"></Label>
+    
+    <RadListView row="1" [items]="course">
           <ng-template tkListItemTemplate let-item="item">
               <StackLayout [margin]="pageSide/4">
                   <StackLayout orientation="horizontal">

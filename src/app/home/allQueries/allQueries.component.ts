@@ -57,7 +57,6 @@ console.log('item');
       .subscribe(res => {
         this.queries = res;
         this.loader = false;
-        console.log(res);
       }, (error) => {
         this.loader = false;
         console.log(error);
